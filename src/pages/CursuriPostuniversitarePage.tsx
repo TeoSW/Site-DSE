@@ -14,8 +14,8 @@ export default function CursuriPostuniversitarePage() {
   const editions = [
     {
       id: 0,
-      title: 'Ediția Aprilie-Mai 2026',
-      period: 'Aprilie-Mai 2026',
+      title: 'Ediția Iunie-Iulie 2026',
+      period: 'Iunie-Iulie 2026',
       schedule: 'Program flexibil (4-8 zile)',
       duration: '30 ore / 4-8 zile',
       credits: '3 ECT',
