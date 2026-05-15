@@ -88,7 +88,6 @@ import cvMihaelaMihai from "../assets/cv/Conf. Univ. Dr. Mihai Mihaela CV.pdf";
 import cvAndreeaMirica from "../assets/cv/Lect. Univ. dr. Mirică Andreea CV.pdf";
 import cvIleanaNiculescu from "../assets/cv/Prof. univ. dr. Ileana Gabriela Niculescu-Aron CV.pdf";
 import cvAdrianOtoiu from "../assets/cv/Adrian Otoiu CV.pdf";
-import cvAndreiParvan from "../assets/cv/Parvan Andrei Teofil CV.pdf"; // TODO
 import cvDanielPele from "../assets/cv/Prof. univ. dr. Daniel Traian Pele CV.pdf";
 import cvRoxanaPetcu from "../assets/cv/Lect. Univ. Dr. Petcu Ionela-Roxana CV.pdf";
 import cvElenaPrada from "../assets/cv/Lect. Univ. Dr. Prada Elena-Maria CV.pdf";
@@ -437,7 +436,6 @@ export function CadreDidactice() {
       email: "andrei.parvan@csie.ase.ro",
       photo: photoAndreiParvan,
       hasPage: false,
-      cvUrl: cvAndreiParvan,
     },
     {
       name: "PELE Daniel Traian",
