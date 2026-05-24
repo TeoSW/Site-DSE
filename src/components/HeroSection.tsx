@@ -6,7 +6,7 @@ import imgCSIE from "../assets/CSIE.jpg";
 import imgGradinaCSIE from "../assets/gradinacsie.jpg";
 import imgASE from "../assets/ASE.jpg";
 import imgGradinaCSIE2 from "../assets/gradina csie 2.jpg";
-import imgSimulare from "../assets/simulare.png";
+import examenAdmitere from "../assets/examen admitere.png";
 
 const slideImages = [imgCSIE, imgGradinaCSIE, imgASE, imgGradinaCSIE2];
 
@@ -109,13 +109,13 @@ export default function HeroSection() {
                   /* adaugă navigarea dorită aici */
                 }}
                 className="focus:outline-none"
-                aria-label="Simulare Examen 16 Mai 2026"
+                aria-label="Examen Admitere 21 iulie 2026"
               >
                 <img
-                  src={imgSimulare}
-                  alt="Simulare Examen 16 Mai 2026"
+                  src={examenAdmitere}
+                  alt="Examen Admitere 21 iulie 2026"
                   className="object-contain drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
-                  style={{ width: "220px", height: "220px", marginTop: "50px" }}
+                  style={{ width: "350px", height: "300px", marginTop: "50px" }}
                 />
               </motion.button>
             </div>
