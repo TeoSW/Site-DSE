@@ -15,8 +15,7 @@ import ProfesoriCoordonatoriPage from './pages/ProfesoriCoordonatoriPage';
 import TestimonialePage from './pages/TestimonialePage';
 import CercetarePage from './pages/CercetarePage';
 import ListeProfesoriPage from './pages/ListeProfesoriPage';
-import EvenimenteTrecutePage from './pages/EvenimenteTrecutePage';
-import ActivitatiViitoarePage from './pages/ActivitatiViitoarePage';
+import ActivitatePage from './pages/ActivitatePage';
 import { StudentiColaboratoriPage } from './pages/StudentiColaboratoriPage';
 import CursuriPostuniversitarePage from './pages/CursuriPostuniversitarePage';
 import { getProfesorPage } from './pages/profesori/ProfesorRouter';
@@ -46,6 +45,10 @@ export function Router() {
       const researchAnchors = ['#/icas', '#/jses', '#/centrul-sondaje'];
       const isResearchAnchor = researchAnchors.includes(newHash);
       
+      // Anchors on the unified Activitate page (old routes land on their section)
+      const activitateAnchors = ['#/activitati-viitoare', '#/evenimente-trecute'];
+      const isActivitateAnchor = activitateAnchors.includes(newHash);
+      
       if (isSectionAnchor) {
         // First navigate to home page
         const cleanHash = newHash.replace('#/', '#').replace('##', '#');
@@ -62,8 +65,8 @@ export function Router() {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }, 100);
-      } else if (isResearchAnchor) {
-        // For research sections, scroll to the specific card
+      } else if (isResearchAnchor || isActivitateAnchor) {
+        // For research/activitate sections, scroll to the specific element
         const sectionId = newHash.replace('#/', '');
         
         // Scroll to top first - use multiple methods for mobile compatibility
@@ -118,8 +121,9 @@ export function Router() {
     '#/jses': <CercetarePage />,
     '#/centrul-sondaje': <CercetarePage />,
     '#/liste-profesori': <ListeProfesoriPage />,
-    '#/evenimente-trecute': <EvenimenteTrecutePage />,
-    '#/activitati-viitoare': <ActivitatiViitoarePage />,
+    '#/activitate': <ActivitatePage />,
+    '#/activitati-viitoare': <ActivitatePage />,
+    '#/evenimente-trecute': <ActivitatePage />,
     '#/studenti-colaboratori': <StudentiColaboratoriPage />,
     '#/cursuri-postuniversitare': <CursuriPostuniversitarePage />,
     // Home page section anchors
