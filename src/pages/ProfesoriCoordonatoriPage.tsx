@@ -1,17 +1,10 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
 import { GraduationCap, BookOpen, ExternalLink } from 'lucide-react';
 
 export default function ProfesoriCoordonatoriPage() {
-  const [, setShowContent] = useState(false);
-
-  useEffect(() => {
-    setShowContent(true);
-  }, []);
-
-  // Mapping de activități didactice pentru fiecare profesor
+// Mapping de activități didactice pentru fiecare profesor
   const profesoriInfo: Record<string, string[]> = {
     'adrian-costea': ['Econometrie', 'Data Mining', 'Bazele Econometriei'],
     'adrian-otoiu': ['Statistică', 'Econometrie', 'Data Mining'],
@@ -94,7 +87,7 @@ export default function ProfesoriCoordonatoriPage() {
             className="text-center mb-12 sm:mb-16"
             style={{ marginTop: "1.5cm" }}
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
               <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
               <span className="text-xs sm:text-sm">COORDONATORI</span>
             </div>
@@ -111,9 +104,9 @@ export default function ProfesoriCoordonatoriPage() {
             className="mb-16"
             
           >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-[#4CC9F0]/20 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 border border-[#4CC9F0]/20 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-6">
-                <div className="bg-gradient-to-r from-[#7209B7] to-[#4361EE] rounded-xl p-3">
+                <div className="bg-[#7209B7] rounded-xl p-3">
                   <BookOpen className="w-6 h-6 text-white" />
                 </div>
                 <h2 className="text-[#3A0CA3] dark:text-[#4CC9F0] text-2xl">
@@ -131,13 +124,13 @@ export default function ProfesoriCoordonatoriPage() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: 0.3 + index * 0.02 }}
-                      className="group p-5 bg-gradient-to-r from-[#4CC9F0]/5 to-[#4361EE]/5 dark:from-[#4CC9F0]/10 dark:to-[#4361EE]/10 rounded-xl hover:from-[#4CC9F0]/20 hover:to-[#4361EE]/20 dark:hover:from-[#4CC9F0]/20 dark:hover:to-[#4361EE]/20 transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700 hover:border-[#4361EE]/40 dark:hover:border-[#4361EE]/40 hover:shadow-lg"
+                      className="group p-5 bg-[#4CC9F0]/5 rounded-xl hover:from-[#4CC9F0]/20 hover:to-[#4361EE]/20 dark:hover:from-[#4CC9F0]/20 dark:hover:to-[#4361EE]/20 transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700 hover:border-[#4361EE]/40 dark:hover:border-[#4361EE]/40 dark:bg-[#4CC9F0]/10"
                     >
                       <div className="flex items-start justify-between gap-3 mb-3">
-                        <p className="text-[#3A0CA3] dark:text-[#4CC9F0] font-semibold group-hover:text-[#4361EE] dark:group-hover:text-[#4895EF] transition-colors">
+                        <p className="text-[#3A0CA3] dark:text-[#4CC9F0] font-semibold group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4895EF] transition-colors">
                           {profesor.name}
                         </p>
-                        <ExternalLink className="w-4 h-4 text-[#4361EE] dark:text-[#4CC9F0] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1" />
+                        <ExternalLink className="w-4 h-4 text-[#4361EE] dark:text-[#A5B8FF] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1" />
                       </div>
                       {activitati.length > 0 && (
                         <div className="space-y-1">
@@ -155,7 +148,7 @@ export default function ProfesoriCoordonatoriPage() {
               
               <div className="mt-6 pt-6 border-t border-[#4CC9F0]/20 dark:border-gray-700">
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  <span className="font-semibold text-[#4361EE] dark:text-[#4CC9F0]">{profesoriLicenta.length}</span> profesori coordonatori pentru lucrări de licență
+                  <span className="font-semibold text-[#4361EE] dark:text-[#A5B8FF]">{profesoriLicenta.length}</span> profesori coordonatori pentru lucrări de licență
                 </p>
               </div>
             </div>
@@ -167,9 +160,9 @@ export default function ProfesoriCoordonatoriPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-[#4CC9F0]/20 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 border border-[#4CC9F0]/20 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-6">
-                <div className="bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] rounded-xl p-3">
+                <div className="bg-[#4361EE] rounded-xl p-3">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
                 <h2 className="text-[#3A0CA3] dark:text-[#4CC9F0] text-2xl">
@@ -187,13 +180,13 @@ export default function ProfesoriCoordonatoriPage() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: 0.5 + index * 0.02 }}
-                      className="group p-5 bg-gradient-to-r from-[#4CC9F0]/5 to-[#4361EE]/5 dark:from-[#4CC9F0]/10 dark:to-[#4361EE]/10 rounded-xl hover:from-[#4CC9F0]/20 hover:to-[#4361EE]/20 dark:hover:from-[#4CC9F0]/20 dark:hover:to-[#4361EE]/20 transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700 hover:border-[#4361EE]/40 dark:hover:border-[#4361EE]/40 hover:shadow-lg"
+                      className="group p-5 bg-[#4CC9F0]/5 rounded-xl hover:from-[#4CC9F0]/20 hover:to-[#4361EE]/20 dark:hover:from-[#4CC9F0]/20 dark:hover:to-[#4361EE]/20 transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700 hover:border-[#4361EE]/40 dark:hover:border-[#4361EE]/40 dark:bg-[#4CC9F0]/10"
                     >
                       <div className="flex items-start justify-between gap-3 mb-3">
-                        <p className="text-[#3A0CA3] dark:text-[#4CC9F0] font-semibold group-hover:text-[#4361EE] dark:group-hover:text-[#4895EF] transition-colors">
+                        <p className="text-[#3A0CA3] dark:text-[#4CC9F0] font-semibold group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4895EF] transition-colors">
                           {profesor.name}
                         </p>
-                        <ExternalLink className="w-4 h-4 text-[#4361EE] dark:text-[#4CC9F0] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1" />
+                        <ExternalLink className="w-4 h-4 text-[#4361EE] dark:text-[#A5B8FF] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1" />
                       </div>
                       {activitati.length > 0 && (
                         <div className="space-y-1">
@@ -211,7 +204,7 @@ export default function ProfesoriCoordonatoriPage() {
               
               <div className="mt-6 pt-6 border-t border-[#4CC9F0]/20 dark:border-gray-700">
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  <span className="font-semibold text-[#4361EE] dark:text-[#4CC9F0]">{profesoriMaster.length}</span> profesori coordonatori pentru disertații
+                  <span className="font-semibold text-[#4361EE] dark:text-[#A5B8FF]">{profesoriMaster.length}</span> profesori coordonatori pentru disertații
                 </p>
               </div>
             </div>

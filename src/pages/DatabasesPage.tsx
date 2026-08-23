@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
@@ -9,49 +8,49 @@ const macrodata = [
     name: 'Eurostat',
     description: 'Baza de date oficială a Uniunii Europene cu statistici economice, sociale și demografice pentru toate țările membre.',
     url: 'https://ec.europa.eu/eurostat',
-    color: 'from-[#7209B7] via-[#4361EE] to-[#4CC9F0]',
+    color: 'bg-[#7209B7]',
     icon: '🇪🇺'
   },
   {
     name: 'Tempo Online',
     description: 'Baza de date a INS România cu serii de timp și statistici naționale actualizate. Acces gratuit la date macroeconomice și demografice.',
     url: 'http://statistici.insse.ro:8077/tempo-online/',
-    color: 'from-[#7209B7] via-[#4361EE] to-[#4CC9F0]',
+    color: 'bg-[#7209B7]',
     icon: '📈'
   },
   {
     name: 'BNR - Baza de Date Interactivă',
     description: 'Banca Națională a României oferă acces la indicatori economici și financiari. Date despre rata dobânzii, inflație, cursuri de schimb și statistici monetare.',
     url: 'https://www.bnr.ro/1074-baza-de-date-interactiva',
-    color: 'from-[#4361EE] via-[#4895EF] to-[#4CC9F0]',
+    color: 'bg-[#4361EE]',
     icon: '🏦'
   },
   {
     name: 'World Bank Data',
     description: 'Cea mai comprehensivă colecție de date de dezvoltare la nivel global. Indicatori economici, sociali și de mediu pentru peste 200 de țări.',
     url: 'https://data.worldbank.org/',
-    color: 'from-[#7209B7] via-[#B5179E] to-[#F72585]',
+    color: 'bg-[#7209B7]',
     icon: '🌍'
   },
   {
     name: 'FMI — Fondul Monetar Internațional',
     description: 'Platforma de date a FMI oferă acces la statistici financiare internaționale, previziuni economice, date privind balanța de plăți și indicatori de stabilitate financiară pentru peste 190 de țări membre.',
     url: 'https://data.imf.org/en',
-    color: 'from-[#3F37C9] via-[#4361EE] to-[#4895EF]',
+    color: 'bg-[#3F37C9]',
     icon: '💱'
   },
   {
     name: 'BCE — Banca Centrală Europeană',
     description: 'Banca Centrală Europeană publică date statistice privind politica monetară, ratele dobânzilor, agregaatele monetare, cursurile de schimb și stabilitatea financiară în zona euro.',
     url: 'https://www.ecb.europa.eu/home/html/index.en.html',
-    color: 'from-[#4895EF] via-[#4CC9F0] to-[#3F37C9]',
+    color: 'bg-[#4895EF]',
     icon: '🏛️'
   },
   {
     name: 'Data Sweep',
     description: 'Platformă pentru colectarea și analiza datelor din surse multiple. Instrumente pentru prelucrarea și vizualizarea datelor economice.',
     url: 'https://datasweep.app/',
-    color: 'from-[#7209B7] via-[#4895EF] to-[#4CC9F0]',
+    color: 'bg-[#7209B7]',
     icon: '🧹'
   }
 ];
@@ -61,19 +60,13 @@ const microdata = [
     name: 'European Social Survey',
     description: 'Sondaj academic bienal care măsoară atitudinile, credințele și comportamentele populației europene. Date individuale anonimizate pentru cercetare.',
     url: 'https://www.europeansocialsurvey.org/',
-    color: 'from-[#4895EF] via-[#4CC9F0] to-[#3F37C9]',
+    color: 'bg-[#4895EF]',
     icon: '👥'
   }
 ];
 
 export default function DatabasesPage() {
-  const [, setShowContent] = useState(false);
-
-  useEffect(() => {
-    setShowContent(true);
-  }, []);
-
-  return (
+return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <SimpleHeader />
 
@@ -88,7 +81,7 @@ export default function DatabasesPage() {
             className="text-center mb-16"
             style={{ marginTop: '1.5cm' }}
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-4">
               <Database className="w-4 h-4" />
               <span className="text-sm">DATABASES</span>
             </div>
@@ -105,7 +98,7 @@ export default function DatabasesPage() {
             className="mb-16"
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#7209B7] to-[#4361EE] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#7209B7] rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl">📊</span>
               </div>
               <div>
@@ -125,25 +118,25 @@ export default function DatabasesPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                  <div className={`absolute inset-0 ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                   <div className="p-8 relative">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${db.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${db.color} mb-6 transition-transform duration-300`}>
                       <span className="text-3xl">{db.icon}</span>
                     </div>
-                    <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
+                    <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
                       {db.name}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[80px]">
                       {db.description}
                     </p>
-                    <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#4CC9F0] font-semibold">
+                    <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#A5B8FF] font-semibold">
                       <span>Vizitează platforma</span>
                       <ExternalLink className="w-5 h-5" />
                     </div>
                   </div>
-                  <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${db.color} opacity-10 rounded-bl-full`}></div>
+                  <div className={`absolute top-0 right-0 w-20 h-20 ${db.color} opacity-10 rounded-bl-full`}></div>
                 </motion.a>
               ))}
             </div>
@@ -157,25 +150,25 @@ export default function DatabasesPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700 w-full md:w-[calc(50%-0.75rem)]"
+                className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700 w-full md:w-[calc(50%-0.75rem)]"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${macrodata[6].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                <div className={`absolute inset-0 ${macrodata[6].color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                 <div className="p-8 relative">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${macrodata[6].color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${macrodata[6].color} mb-6 transition-transform duration-300`}>
                     <span className="text-3xl">{macrodata[6].icon}</span>
                   </div>
-                  <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
+                  <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
                     {macrodata[6].name}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[80px]">
                     {macrodata[6].description}
                   </p>
-                  <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#4CC9F0] font-semibold">
+                  <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#A5B8FF] font-semibold">
                     <span>Vizitează platforma</span>
                     <ExternalLink className="w-5 h-5" />
                   </div>
                 </div>
-                <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${macrodata[6].color} opacity-10 rounded-bl-full`}></div>
+                <div className={`absolute top-0 right-0 w-20 h-20 ${macrodata[6].color} opacity-10 rounded-bl-full`}></div>
               </motion.a>
             </div>
           </motion.div>
@@ -188,7 +181,7 @@ export default function DatabasesPage() {
             className="mb-16"
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#4895EF] to-[#4CC9F0] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#4895EF] rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl">👥</span>
               </div>
               <div>
@@ -207,29 +200,29 @@ export default function DatabasesPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                  className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                  <div className={`absolute inset-0 ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                   <div className="p-8 relative">
                     <div className="flex items-start gap-6">
-                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${db.color} group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${db.color} transition-transform duration-300 flex-shrink-0`}>
                         <span className="text-3xl">{db.icon}</span>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
+                        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
                           {db.name}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                           {db.description}
                         </p>
-                        <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#4CC9F0] font-semibold">
+                        <div className="flex items-center gap-2 group-hover:gap-3 transition-all text-[#4361EE] dark:text-[#A5B8FF] font-semibold">
                           <span>Vizitează platforma</span>
                           <ExternalLink className="w-5 h-5" />
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${db.color} opacity-10 rounded-bl-full`}></div>
+                  <div className={`absolute top-0 right-0 w-20 h-20 ${db.color} opacity-10 rounded-bl-full`}></div>
                 </motion.a>
               ))}
             </div>
@@ -240,10 +233,10 @@ export default function DatabasesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="bg-gradient-to-r from-[#4361EE]/10 to-[#4CC9F0]/10 dark:from-[#4361EE]/20 dark:to-[#4CC9F0]/20 border-l-4 border-[#4361EE] rounded-r-2xl p-8"
+            className="bg-[#4361EE]/10 border-l-4 border-[#4361EE] rounded-r-2xl p-8 dark:bg-[#4361EE]/20"
           >
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#4361EE] to-[#4895EF] rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-[#4361EE] rounded-lg flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-2xl">💡</span>
               </div>
               <div>

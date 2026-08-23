@@ -142,10 +142,10 @@ export default function DisciplinePage() {
   const getOptionalityColor = (optional: string) => {
     switch(optional) {
       case 'O': return 'bg-[#4361EE] text-white';
-      case 'A': return 'bg-[#4CC9F0] text-white';
-      case 'F': return 'bg-[#F72585] text-white';
+      case 'A': return 'bg-[#4361EE] text-white';
+      case 'F': return 'bg-[#B5179E] text-white';
       case 'S': return 'bg-[#7209B7] text-white';
-      case 'P': return 'bg-[#FF9F1C] text-white';
+      case 'P': return 'bg-[#FF9F1C] text-[#1F2937]';
       default: return 'bg-gray-500 text-white';
     }
   };
@@ -164,8 +164,8 @@ export default function DisciplinePage() {
   const getExamTypeColor = (examType: string) => {
     switch(examType) {
       case 'Examen': return 'bg-[#7209B7] text-white';
-      case 'Verificare': return 'bg-[#4895EF] text-white';
-      case 'Colocviu': return 'bg-[#4CC9F0] text-white';
+      case 'Verificare': return 'bg-[#4361EE] text-white';
+      case 'Colocviu': return 'bg-[#4361EE] text-white';
       default: return 'bg-gray-400 text-white';
     }
   };
@@ -190,7 +190,7 @@ export default function DisciplinePage() {
                 Program Licență
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-[#4361EE] via-[#4CC9F0] to-[#7209B7] bg-clip-text text-transparent discipline-title">
+            <h1 className="text-5xl md:text-6xl mb-4 discipline-title text-[#3A0CA3] dark:text-[#4CC9F0]">
               Plan de Învățământ Complet
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-2 discipline-subtitle">Licență în Statistică Economică și Data Science</p>
@@ -207,7 +207,7 @@ export default function DisciplinePage() {
             className="mb-20"
           >
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] text-white px-4 py-2 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 bg-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
                 <Brain className="w-4 h-4" />
                 <span className="text-sm">CURRICULUM</span>
               </div>
@@ -238,7 +238,7 @@ export default function DisciplinePage() {
                   onClick={() => setSelectedSemester(1)}
                   className={`px-6 py-2 rounded-lg font-medium transition-all ${
                     selectedSemester === 1
-                      ? 'bg-[#4CC9F0] text-white shadow-lg'
+                      ? 'bg-[#4361EE] text-white shadow-lg'
                       : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                   }`}
                 >
@@ -248,7 +248,7 @@ export default function DisciplinePage() {
                   onClick={() => setSelectedSemester(2)}
                   className={`px-6 py-2 rounded-lg font-medium transition-all ${
                     selectedSemester === 2
-                      ? 'bg-[#4CC9F0] text-white shadow-lg'
+                      ? 'bg-[#4361EE] text-white shadow-lg'
                       : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                   }`}
                 >
@@ -265,7 +265,7 @@ export default function DisciplinePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all discipline-card"
+                  className="bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6 transition-all discipline-card"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-4 discipline-card-content">
                     <div className="flex-1 min-w-0">
@@ -294,7 +294,7 @@ export default function DisciplinePage() {
                         href={subject.syllabusLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] text-white rounded-lg hover:shadow-lg transition-all hover:scale-105 discipline-link"
+                        className="flex items-center gap-2 px-4 py-2 bg-[#4361EE] text-white rounded-lg transition-all discipline-link"
                       >
                         <BookOpen className="w-5 h-5 discipline-link-icon" />
                         <span className="font-medium">Fișa disciplinei</span>
@@ -314,18 +314,18 @@ export default function DisciplinePage() {
                   <p className="font-medium text-gray-700 dark:text-gray-300 mb-2">Tip examen:</p>
                   <div className="flex flex-wrap gap-2">
                     <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#7209B7] text-white">Examen</span>
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4895EF] text-white">Verificare</span>
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4CC9F0] text-white">Colocviu</span>
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">Verificare</span>
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">Colocviu</span>
                   </div>
                 </div>
                 <div>
                   <p className="font-medium text-gray-700 dark:text-gray-300 mb-2">Opționalitate:</p>
                   <div className="flex flex-wrap gap-2">
                     <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">Obligatoriu</span>
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4CC9F0] text-white">Alegere</span>
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#F72585] text-white">Facultativ</span>
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">Alegere</span>
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#B5179E] text-white">Facultativ</span>
                     <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#7209B7] text-white">Sport</span>
-                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#FF9F1C] text-white">Practică</span>
+                    <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#FF9F1C] text-[#1F2937]">Practică</span>
                   </div>
                 </div>
               </div>

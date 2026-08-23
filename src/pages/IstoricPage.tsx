@@ -1,16 +1,9 @@
-import { useState, useEffect } from 'react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Istoric } from '../components/Istoric';
 import { Footer } from '../components/Footer';
 
 export default function IstoricPage() {
-  const [, setShowContent] = useState(false);
-
-  useEffect(() => {
-    setShowContent(true);
-  }, []);
-
-  return (
+return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
       <SimpleHeader/>
       

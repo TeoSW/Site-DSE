@@ -45,13 +45,7 @@ export default function HeroSection() {
               <span className="dark:hidden" style={{ color: "#22409a" }}>
                 Departamentul de{" "}
                 <span
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  style={{ color: "#7209B7" }}
                 >
                   Statistică și Econometrie
                 </span>
@@ -59,13 +53,7 @@ export default function HeroSection() {
               <span className="hidden dark:inline" style={{ color: "#ffffff" }}>
                 Departamentul de{" "}
                 <span
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  style={{ color: "#4CC9F0" }}
                 >
                   Statistică și Econometrie
                 </span>
@@ -129,7 +117,7 @@ export default function HeroSection() {
             className="flex-1 w-full slideshow-wrapper"
           >
             <div
-              className="relative w-full rounded-2xl overflow-hidden shadow-2xl group slideshow-container"
+              className="relative w-full rounded-xl overflow-hidden shadow-sm group slideshow-container"
               style={{ aspectRatio: "4/3" }}
             >
               {slideImages.map((image, index) => (
@@ -152,7 +140,7 @@ export default function HeroSection() {
               {/* Navigation Arrows */}
               <button
                 onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-800 p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-800 p-2 rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
                 aria-label="Imagine anterioară"
               >
                 <ChevronLeft className="w-6 h-6 text-gray-800 dark:text-white btn-icon-mobile" />
@@ -160,7 +148,7 @@ export default function HeroSection() {
 
               <button
                 onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-800 p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-800 p-2 rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
                 aria-label="Imagine următoare"
               >
                 <ChevronRight className="w-6 h-6 text-gray-800 dark:text-white btn-icon-mobile" />

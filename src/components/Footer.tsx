@@ -9,7 +9,7 @@ export function Footer() {
       className="bg-gray-900 dark:bg-gray-950 text-white py-6"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-gray-400 dark:text-gray-500 text-sm">
+        <p className="text-gray-500 dark:text-gray-400 text-sm">
           © 2025 DSE
         </p>
       </div>

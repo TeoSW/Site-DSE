@@ -37,7 +37,7 @@ export function Noutati() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
             <Newspaper className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="text-xs sm:text-sm">NOUTĂȚI ȘI ANUNȚURI</span>
           </div>
@@ -60,7 +60,7 @@ export function Noutati() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full text-sm">
+                  <span className="bg-[#7209B7] text-white px-4 py-2 rounded-full text-sm">
                     Conferință
                   </span>
                 </div>
@@ -70,7 +70,7 @@ export function Noutati() {
                 <p className="text-gray-600 mb-6">{news[0].description}</p>
                 <a
                   href={news[0].link}
-                  className="inline-flex items-center gap-2 text-[#4361EE] hover:text-[#7209B7] transition-colors group"
+                  className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors group"
                 >
                   <span>Citește mai mult</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -89,17 +89,17 @@ export function Noutati() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-[#4CC9F0]/20"
+              className="bg-white rounded-xl shadow-sm transition-all duration-300 overflow-hidden group border border-[#4CC9F0]/20"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] text-white px-3 py-1 rounded-full text-sm">
+                  <span className="bg-[#4361EE] text-white px-3 py-1 rounded-full text-sm">
                     {index === 0 ? 'Jurnal' : 'Centru'}
                   </span>
                 </div>
@@ -111,7 +111,7 @@ export function Noutati() {
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">{item.description}</p>
                 <a
                   href={item.link}
-                  className="inline-flex items-center gap-2 text-[#4361EE] hover:text-[#7209B7] transition-colors group text-sm"
+                  className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors group text-sm"
                 >
                   <span>Citește mai mult</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

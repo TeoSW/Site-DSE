@@ -295,7 +295,7 @@ export function MasterASDSDetails() {
       case "O":
         return "bg-[#4361EE] text-white";
       case "A":
-        return "bg-[#4CC9F0] text-white";
+        return "bg-[#4361EE] text-white";
       case "S":
         return "bg-[#7209B7] text-white";
       default:
@@ -321,9 +321,9 @@ export function MasterASDSDetails() {
       case "Examen":
         return "bg-[#7209B7] text-white";
       case "Verificare":
-        return "bg-[#4895EF] text-white";
+        return "bg-[#4361EE] text-white";
       case "Colocviu":
-        return "bg-[#4CC9F0] text-white";
+        return "bg-[#4361EE] text-white";
       default:
         return "bg-gray-400 text-white";
     }
@@ -355,7 +355,7 @@ export function MasterASDSDetails() {
       href="https://asds-csie.ase.ro/acreditari-si-parteneriate/"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 px-6 py-2 rounded-full border-2 border-[#7209B7] bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white hover:scale-105 transition-transform duration-200 cursor-pointer shadow-md hover:shadow-lg"
+      className="inline-flex items-center gap-2 px-6 py-2 rounded-full border-2 border-[#7209B7] bg-[#7209B7] text-white transition-transform duration-200 cursor-pointer shadow-md"
     >
       <span className="text-sm font-semibold uppercase tracking-wider">
         🏅 Certificat EMOS
@@ -363,7 +363,7 @@ export function MasterASDSDetails() {
       <ExternalLink className="w-3 h-3" /> {/* Opțional: am adăugat o iconiță mică de link extern */}
     </a>
   </div>
-          <h1 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-[#7209B7] via-[#F72585] to-[#4361EE] bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl mb-4 text-[#3A0CA3] dark:text-[#4CC9F0]">
             {masterInfo.title}
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">
@@ -375,11 +375,11 @@ export function MasterASDSDetails() {
 
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <GraduationCap className="w-5 h-5 text-[#7209B7] dark:text-[#B5179E]" />
+              <GraduationCap className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF]" />
               <span>{masterInfo.duration}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <Users className="w-5 h-5 text-[#7209B7] dark:text-[#B5179E]" />
+              <Users className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF]" />
               <span>Coordonator: {masterInfo.coordinator}</span>
             </div>
           </div>
@@ -426,7 +426,7 @@ export function MasterASDSDetails() {
           className="mb-20"
         >
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-4">
               <Brain className="w-4 h-4" />
               <span className="text-sm">CURRICULUM</span>
             </div>
@@ -447,7 +447,7 @@ export function MasterASDSDetails() {
                 onClick={() => setSelectedYear(1)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   selectedYear === 1
-                    ? "bg-[#7209B7] text-white shadow-lg"
+                    ? "bg-[#7209B7] text-white shadow-sm"
                     : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
@@ -457,7 +457,7 @@ export function MasterASDSDetails() {
                 onClick={() => setSelectedYear(2)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   selectedYear === 2
-                    ? "bg-[#7209B7] text-white shadow-lg"
+                    ? "bg-[#7209B7] text-white shadow-sm"
                     : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
@@ -471,7 +471,7 @@ export function MasterASDSDetails() {
                 onClick={() => setSelectedSemester(1)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   selectedSemester === 1
-                    ? "bg-[#4895EF] text-white shadow-lg"
+                    ? "bg-[#4361EE] text-white shadow-sm"
                     : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
@@ -481,7 +481,7 @@ export function MasterASDSDetails() {
                 onClick={() => setSelectedSemester(2)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   selectedSemester === 2
-                    ? "bg-[#4895EF] text-white shadow-lg"
+                    ? "bg-[#4361EE] text-white shadow-sm"
                     : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
@@ -498,7 +498,7 @@ export function MasterASDSDetails() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="master-subject-card-mobile bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all"
+                className="master-subject-card-mobile bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6 transition-all"
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
@@ -530,7 +530,7 @@ export function MasterASDSDetails() {
                     href={subject.syllabusLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#7209B7] to-[#F72585] text-white rounded-lg hover:shadow-lg transition-all hover:scale-105"
+                    className="flex items-center gap-2 px-4 py-2 bg-[#7209B7] text-white rounded-lg transition-all"
                   >
                     <BookOpen className="w-5 h-5" />
                     <span className="font-medium">Fișa disciplinei</span>
@@ -555,10 +555,10 @@ export function MasterASDSDetails() {
                   <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#7209B7] text-white">
                     Examen
                   </span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4895EF] text-white">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">
                     Verificare
                   </span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4CC9F0] text-white">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">
                     Colocviu
                   </span>
                 </div>
@@ -571,7 +571,7 @@ export function MasterASDSDetails() {
                   <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">
                     Obligatoriu
                   </span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4CC9F0] text-white">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">
                     Alegere
                   </span>
                   <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#7209B7] text-white">
@@ -588,11 +588,8 @@ export function MasterASDSDetails() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="rounded-2xl p-8 md:p-12 text-white text-center"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, #7209B7 0%, #B5179E 50%, #F72585 100%)",
-          }}
+          className="rounded-xl p-8 md:p-12 text-white text-center"
+          style={{ backgroundColor: "#7209B7" }}
         >
           <h3 className="text-3xl mb-4">Începe-ți cariera în Data Science</h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
@@ -603,7 +600,7 @@ export function MasterASDSDetails() {
             href={masterInfo.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white text-[#7209B7] px-8 py-4 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-3 bg-white text-[#7209B7] px-8 py-4 rounded-full transition-all duration-300"
           >
             <span className="text-lg">Vizitează site-ul oficial</span>
             <ExternalLink className="w-5 h-5" />

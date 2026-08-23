@@ -7,19 +7,19 @@ const databases = [
     name: 'Kaggle',
     description: 'Platformă globală pentru competiții de data science și seturi de date pentru practică',
     url: 'https://www.kaggle.com',
-    color: 'from-[#4895EF] to-[#4CC9F0]',
+    color: 'bg-[#4895EF]',
   },
   {
     name: 'Eurostat',
     description: 'Datele officiale statistice ale Uniunii Europene - indispensabil pentru analiza economică',
     url: 'https://ec.europa.eu/eurostat',
-    color: 'from-[#B5179E] to-[#F72585]',
+    color: 'bg-[#B5179E]',
   },
   {
     name: 'Tempo Online',
     description: 'Baza de date a Institutului Național de Statistică - statistici detaliate despre România',
     url: 'http://statistici.insse.ro:8077/tempo-online/',
-    color: 'from-[#7209B7] to-[#B5179E]',
+    color: 'bg-[#7209B7]',
   },
 ];
 
@@ -52,11 +52,11 @@ export function DatabaseLinks() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+              className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+              <div className={`absolute inset-0 ${db.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
               <div className="p-8">
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${db.color} mb-4`}>
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${db.color} mb-4`}>
                   <ExternalLink className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl mb-3 transition-colors dark:text-white" style={{ color: undefined }} onMouseEnter={(e) => (e.currentTarget as HTMLElement).parentElement?.parentElement?.classList.contains('group') && ((e.currentTarget as HTMLElement).style.color = '#4361EE')} onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = ''}>{db.name}</h3>
@@ -75,7 +75,7 @@ export function DatabaseLinks() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid lg:grid-cols-2 gap-12 items-center bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100 dark:border-gray-700"
+          className="grid lg:grid-cols-2 gap-12 items-center bg-white dark:bg-gray-800 rounded-xl p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700"
         >
           <div>
             <h3 className="text-3xl mb-6 dark:text-white">Carieră și Oportunități</h3>

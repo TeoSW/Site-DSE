@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
@@ -18,7 +17,7 @@ const instrumente: Tool[] = [
     name: 'RStudio',
     description: 'Mediu integrat de dezvoltare (IDE) pentru limbajul R, esențial pentru analiză statistică avansată și vizualizare de date. Include editor de cod, console, debugger și workspace manager.',
     url: 'https://posit.co/download/rstudio-desktop/',
-    color: 'from-[#7209B7] via-[#4361EE] to-[#4CC9F0]',
+    color: 'bg-[#7209B7]',
     icon: '📊',
     category: 'Statistică & R'
   },
@@ -26,7 +25,7 @@ const instrumente: Tool[] = [
     name: 'PyCharm',
     description: 'IDE profesional pentru Python, perfect pentru data science și machine learning. Suport complet pentru biblioteci populare precum pandas, NumPy, scikit-learn și TensorFlow.',
     url: 'https://www.jetbrains.com/pycharm/download/?section=windows',
-    color: 'from-[#4361EE] via-[#4895EF] to-[#4CC9F0]',
+    color: 'bg-[#4361EE]',
     icon: '🐍',
     category: 'Python & Data Science'
   },
@@ -34,7 +33,7 @@ const instrumente: Tool[] = [
     name: 'JASP',
     description: 'Software gratuit și open-source pentru analiză statistică cu interfață intuitivă. Ideal pentru analiza datelor, teste statistice și modele Bayesiene. Alternativă modernă la SPSS.',
     url: 'https://jasp-stats.org/',
-    color: 'from-[#7209B7] via-[#B5179E] to-[#F72585]',
+    color: 'bg-[#7209B7]',
     icon: '📈',
     category: 'Analiză Statistică'
   },
@@ -42,7 +41,7 @@ const instrumente: Tool[] = [
     name: 'GeoDa',
     description: 'Instrument specializat pentru analiza spațială și explorarea datelor geografice. Perfect pentru econometrie spațială și analize GIS. Dezvoltat de Center for Spatial Data Science.',
     url: 'https://geodacenter.github.io/',
-    color: 'from-[#4895EF] via-[#4CC9F0] to-[#3F37C9]',
+    color: 'bg-[#4895EF]',
     icon: '🗺️',
     category: 'Analiză Spațială'
   },
@@ -50,7 +49,7 @@ const instrumente: Tool[] = [
     name: 'EViews',
     description: 'Software econometric de referință pentru analiza seriilor de timp, modele VAR, ARCH/GARCH și previziuni macroeconomice. Utilizat extensiv în cercetare economică și instituții financiare internaționale.',
     url: 'https://www.eviews.com/home.html',
-    color: 'from-[#3F37C9] via-[#4361EE] to-[#4895EF]',
+    color: 'bg-[#3F37C9]',
     icon: '📉',
     category: 'Econometrie'
   },
@@ -58,7 +57,7 @@ const instrumente: Tool[] = [
     name: 'SPSS',
     description: 'Platformă statistică IBM de referință pentru cercetare socială și economică. Oferă analize descriptive, regresii, analize factoriale și clustering, cu interfață vizuală accesibilă.',
     url: 'https://www.ibm.com/spss',
-    color: 'from-[#4CC9F0] via-[#4895EF] to-[#4361EE]',
+    color: 'bg-[#4CC9F0]',
     icon: '🔬',
     category: 'Statistică Aplicată'
   },
@@ -66,7 +65,7 @@ const instrumente: Tool[] = [
     name: 'JDemetra+',
     description: 'Instrument oficial recomandat de Eurostat și BCE pentru ajustarea sezonieră și analiza seriilor de timp. Implementează metodele X-13ARIMA-SEATS și TRAMO/SEATS, utilizat în statistică oficială.',
     url: 'https://jdemetra-new-documentation.netlify.app/',
-    color: 'from-[#B5179E] via-[#7209B7] to-[#3A0CA3]',
+    color: 'bg-[#B5179E]',
     icon: '📅',
     category: 'Serii de Timp'
   },
@@ -74,7 +73,7 @@ const instrumente: Tool[] = [
     name: 'Stata',
     description: 'Software statistic complet pentru econometrie, analize panel, date longitudinale și modele cu variabile instrumentale. Foarte apreciat în cercetarea academică și publicațiile științifice de top.',
     url: 'https://www.stata.com/',
-    color: 'from-[#F72585] via-[#B5179E] to-[#7209B7]',
+    color: 'bg-[#F72585]',
     icon: '📐',
     category: 'Econometrie & Panel'
   },
@@ -82,7 +81,7 @@ const instrumente: Tool[] = [
     name: 'Excel Data Viz',
     description: 'Platformă cu resurse și tutoriale pentru vizualizarea datelor în Excel. Template-uri profesionale, grafice interactive și best practices pentru analiza și prezentarea datelor.',
     url: 'https://exceldataviz.com/',
-    color: 'from-[#4361EE] via-[#4CC9F0] to-[#7209B7]',
+    color: 'bg-[#4361EE]',
     icon: '📊',
     category: 'Vizualizare Date'
   }
@@ -94,21 +93,21 @@ function ToolCard({ tool, index }: { tool: Tool; index: number }) {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
+      className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 border border-[#4CC9F0]/20 dark:border-gray-700"
     >
-      <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+      <div className={`absolute inset-0 ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
 
       <div className="p-8 relative">
         <div className="flex items-start justify-between mb-6">
-          <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${tool.color} group-hover:scale-110 transition-transform duration-300`}>
+          <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl ${tool.color} transition-transform duration-300`}>
             <span className="text-4xl">{tool.icon}</span>
           </div>
-          <span className="text-xs bg-[#4CC9F0]/20 dark:bg-[#4CC9F0]/10 text-[#4361EE] dark:text-[#4CC9F0] px-3 py-1 rounded-full font-medium">
+          <span className="text-xs bg-[#4CC9F0]/20 dark:bg-[#4CC9F0]/10 text-[#4361EE] dark:text-[#A5B8FF] px-3 py-1 rounded-full font-medium">
             {tool.category}
           </span>
         </div>
 
-        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:group-hover:text-[#4CC9F0] transition-colors">
+        <h3 className="text-2xl mb-4 text-gray-900 dark:text-white group-hover:text-[#4361EE] dark:text-[#A5B8FF] dark:group-hover:text-[#4CC9F0] transition-colors">
           {tool.name}
         </h3>
         <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed min-h-[100px]">
@@ -119,7 +118,7 @@ function ToolCard({ tool, index }: { tool: Tool; index: number }) {
           href={tool.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#7209B7] text-white rounded-lg transition-all duration-300 font-semibold"
         >
           <Download className="w-5 h-5" />
           <span>Descarcă acum</span>
@@ -127,19 +126,13 @@ function ToolCard({ tool, index }: { tool: Tool; index: number }) {
         </a>
       </div>
 
-      <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${tool.color} opacity-10 rounded-bl-full`}></div>
+      <div className={`absolute top-0 right-0 w-24 h-24 ${tool.color} opacity-10 rounded-bl-full`}></div>
     </motion.div>
   );
 }
 
 export default function InstrumenteAnalizaPage() {
-  const [, setShowContent] = useState(false);
-
-  useEffect(() => {
-    setShowContent(true);
-  }, []);
-
-  const gridTools = instrumente.slice(0, 8);
+const gridTools = instrumente.slice(0, 8);
   const centeredTool = instrumente[8];
 
   return (
@@ -156,7 +149,7 @@ export default function InstrumenteAnalizaPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8" style={{ marginTop: "1.5cm" }}>
+            <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-8" style={{ marginTop: "1.5cm" }}>
               <Code2 className="w-4 h-8"/>
               <span className="text-sm">INSTRUMENTE</span>
             </div>
@@ -185,10 +178,10 @@ export default function InstrumenteAnalizaPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-gradient-to-r from-[#4361EE]/10 to-[#4CC9F0]/10 dark:from-[#4361EE]/20 dark:to-[#4CC9F0]/20 border-l-4 border-[#4361EE] rounded-r-2xl p-8"
+              className="bg-[#4361EE]/10 border-l-4 border-[#4361EE] rounded-r-2xl p-8 dark:bg-[#4361EE]/20"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#4361EE] to-[#4895EF] rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#4361EE] rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-2xl">💡</span>
                 </div>
                 <div>
@@ -204,10 +197,10 @@ export default function InstrumenteAnalizaPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-gradient-to-r from-[#7209B7]/10 to-[#B5179E]/10 dark:from-[#7209B7]/20 dark:to-[#B5179E]/20 border-l-4 border-[#7209B7] rounded-r-2xl p-8"
+              className="bg-[#7209B7]/10 border-l-4 border-[#7209B7] rounded-r-2xl p-8 dark:bg-[#7209B7]/20"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#7209B7] to-[#B5179E] rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#7209B7] rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-2xl">📚</span>
                 </div>
                 <div>

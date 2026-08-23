@@ -170,13 +170,13 @@ function EvenimentCard({
           <div
             className={`rounded-xl p-3 ${
               estompat
-                ? "bg-gradient-to-br from-gray-500 to-gray-700 dark:from-gray-600 dark:to-gray-800"
-                : "bg-gradient-to-br from-[#7209B7] to-[#4361EE]"
+                ? "bg-gray-500 dark:bg-gray-600"
+                : "bg-[#7209B7]"
             }`}
           >
             <IconComponent className="w-5 h-5 text-white" />
           </div>
-          <div className="inline-flex items-center gap-2 bg-[#4CC9F0]/10 dark:bg-[#4CC9F0]/20 text-[#4361EE] dark:text-[#4CC9F0] px-3 py-1 rounded-full text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 bg-[#4CC9F0]/10 dark:bg-[#4CC9F0]/20 text-[#4361EE] dark:text-[#A5B8FF] px-3 py-1 rounded-full text-xs font-semibold">
             {eveniment.categorie}
           </div>
         </div>
@@ -205,7 +205,7 @@ function EvenimentCard({
             href={eveniment.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#4361EE] hover:text-[#7209B7] dark:text-[#4CC9F0] dark:hover:text-[#4361EE] font-semibold transition-colors group-hover:gap-3 duration-300"
+            className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#4361EE] dark:text-[#A5B8FF] font-semibold transition-colors group-hover:gap-3 duration-300"
           >
             <span>Citește mai mult</span>
             <ArrowRight className="w-4 h-4" />
@@ -247,7 +247,7 @@ export default function ActivitatePage() {
             className="text-center mb-16"
             style={{ marginTop: "1.5cm" }}
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-8">
               <Calendar className="w-4 h-4" />
               <span className="text-sm">Activitate</span>
             </div>
@@ -266,7 +266,7 @@ export default function ActivitatePage() {
               transition={{ duration: 0.5 }}
               className="flex items-center gap-3 mb-8"
             >
-              <div className="bg-gradient-to-br from-[#7209B7] to-[#4361EE] rounded-xl p-2.5">
+              <div className="bg-[#7209B7] rounded-xl p-2.5">
                 <CalendarClock className="w-5 h-5 text-white" />
               </div>
               <h2
@@ -275,7 +275,7 @@ export default function ActivitatePage() {
               >
                 Activități viitoare
               </h2>
-              <div className="flex-1 h-px bg-gradient-to-r from-[#4361EE]/30 to-transparent" />
+              <div className="flex-1 h-px bg-[#4361EE]/30" />
             </motion.div>
 
             {viitoare.length > 0 ? (
@@ -289,7 +289,7 @@ export default function ActivitatePage() {
                 ))}
               </div>
             ) : (
-              <div className="rounded-2xl border border-dashed border-[#4CC9F0]/40 dark:border-gray-700 p-10 text-center">
+              <div className="rounded-xl border border-dashed border-[#4CC9F0]/40 dark:border-gray-700 p-10 text-center">
                 <p className="text-gray-500 dark:text-gray-400">
                   Momentan nu sunt activități viitoare anunțate. Revino curând!
                 </p>
@@ -306,7 +306,7 @@ export default function ActivitatePage() {
               transition={{ duration: 0.5 }}
               className="flex items-center gap-3 mb-8"
             >
-              <div className="bg-gradient-to-br from-gray-500 to-gray-700 dark:from-gray-600 dark:to-gray-800 rounded-xl p-2.5">
+              <div className="bg-gray-500 rounded-xl p-2.5 dark:bg-gray-600">
                 <History className="w-5 h-5 text-white" />
               </div>
               <h2
@@ -315,7 +315,7 @@ export default function ActivitatePage() {
               >
                 Evenimente trecute
               </h2>
-              <div className="flex-1 h-px bg-gradient-to-r from-gray-400/40 to-transparent" />
+              <div className="flex-1 h-px bg-gray-400/40" />
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

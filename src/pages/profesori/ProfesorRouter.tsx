@@ -45,18 +45,18 @@ import { JSX } from 'react';
 // Component simplu pentru profesorii în așteptare (fără date false)
 function ProfesorComingSoon({ name, email }: { name: string; email: string }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-[#4CC9F0]/5 to-[#7209B7]/5 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-24 pb-16 px-6">
+    <div className="min-h-screen bg-white pt-24 pb-16 px-6 dark:bg-gray-900">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-12 text-center border border-[#4CC9F0]/20 dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-12 text-center border border-[#4CC9F0]/20 dark:border-gray-700">
           <div className="mb-6">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#7209B7] to-[#4361EE] text-white text-2xl mb-4">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#7209B7] text-white text-2xl mb-4">
               {name.split(' ').slice(0, 2).map(n => n[0]).join('')}
             </div>
             <h1 className="text-3xl text-[#3A0CA3] dark:text-[#4CC9F0] mb-2">{name}</h1>
             <p className="text-gray-600 dark:text-gray-400 mb-6">{email}</p>
           </div>
           
-          <div className="bg-gradient-to-r from-[#4CC9F0]/10 to-[#7209B7]/10 dark:from-[#4CC9F0]/5 dark:to-[#7209B7]/5 rounded-xl p-8 mb-6">
+          <div className="bg-[#4CC9F0]/10 rounded-xl p-8 mb-6 dark:bg-[#4CC9F0]/5">
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
               📄 Pagina profesorului este în curs de completare
             </p>
@@ -67,7 +67,7 @@ function ProfesorComingSoon({ name, email }: { name: string; email: string }) {
 
           <button 
             onClick={() => window.history.back()}
-            className="px-6 py-3 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200"
+            className="px-6 py-3 bg-[#7209B7] text-white rounded-lg transition-all duration-200"
           >
             ← Înapoi la Cadre Didactice
           </button>

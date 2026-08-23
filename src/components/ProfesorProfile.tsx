@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import {
   Mail,
@@ -55,18 +54,12 @@ interface ProfesorProfileProps {
 }
 
 export function ProfesorProfile({ data }: ProfesorProfileProps) {
-  const [, setShowContent] = useState(false);
-
-  useEffect(() => {
-    setShowContent(true);
-  }, []);
-
-  const getInitialsColor = (initials: string) => {
+const getInitialsColor = (initials: string) => {
     const colors = [
-      "bg-gradient-to-br from-[#7209B7] to-[#4361EE]",
-      "bg-gradient-to-br from-[#4361EE] to-[#4895EF]",
-      "bg-gradient-to-br from-[#4895EF] to-[#4CC9F0]",
-      "bg-gradient-to-br from-[#4CC9F0] to-[#7209B7]",
+      "bg-[#7209B7]",
+      "bg-[#4361EE]",
+      "bg-[#4895EF]",
+      "bg-[#4CC9F0]",
     ];
     return colors[initials.charCodeAt(0) % colors.length];
   };
@@ -101,7 +94,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
             >
               <a
                 href="#/cadre-didactice"
-                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#7209B7] text-white rounded-full transition-all duration-300 text-sm sm:text-base"
               >
                 <Home className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span className="font-semibold">Înapoi la Echipa noastră</span>
@@ -113,7 +106,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-[#4CC9F0]/20 dark:border-gray-700 mb-8"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 border border-[#4CC9F0]/20 dark:border-gray-700 mb-8"
             >
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
                 {/* Avatar */}
@@ -136,11 +129,11 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                   <h1 className="text-4xl text-[#3A0CA3] dark:text-[#4CC9F0] mb-2">
                     {data.name}
                   </h1>
-                  <p className="text-xl text-[#F59E0B] mb-4">{data.role}</p>
+                  <p className="text-xl text-[#B45309] dark:text-[#F59E0B] mb-4">{data.role}</p>
 
                   <a
                     href={`mailto:${data.email}`}
-                    className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#4CC9F0] hover:text-[#7209B7] dark:hover:text-[#7209B7] transition-colors"
+                    className="inline-flex items-center gap-2 text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors"
                   >
                     <Mail className="w-5 h-5" />
                     <span>{data.email}</span>
@@ -157,10 +150,10 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <GraduationCap className="w-5 h-5 text-[#4361EE]" />
+                    <GraduationCap className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
                     <h2 className="text-xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                       Activitate didactică
                     </h2>
@@ -171,7 +164,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                         key={idx}
                         className="text-gray-600 dark:text-gray-300 flex items-start gap-2"
                       >
-                        <span className="text-[#4361EE] mt-1">•</span>
+                        <span className="text-[#4361EE] dark:text-[#A5B8FF] mt-1">•</span>
                         <span>{activitate}</span>
                       </li>
                     ))}
@@ -185,10 +178,10 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <BookOpen className="w-5 h-5 text-[#4361EE]" />
+                    <BookOpen className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
                     <h2 className="text-xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                       Domenii de cercetare
                     </h2>
@@ -197,7 +190,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                     {(data.domeniiCercetare || []).map((domeniu, idx) => (
                       <span
                         key={idx}
-                        className="bg-gradient-to-r from-[#7209B7]/10 to-[#4361EE]/10 dark:from-[#7209B7]/20 dark:to-[#4361EE]/20 text-[#3A0CA3] dark:text-[#4CC9F0] px-3 py-2 rounded-lg text-sm border border-[#4361EE]/20 dark:border-[#4CC9F0]/20"
+                        className="bg-[#7209B7]/10 text-[#3A0CA3] dark:text-[#4CC9F0] px-3 py-2 rounded-lg text-sm border border-[#4361EE]/20 dark:border-[#4CC9F0]/20 dark:bg-[#7209B7]/20"
                       >
                         {domeniu}
                       </span>
@@ -212,10 +205,10 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <Users className="w-5 h-5 text-[#4361EE]" />
+                    <Users className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
                     <h2 className="text-xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                       Teze de doctorat coordonate
                     </h2>
@@ -229,7 +222,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                             key={idx}
                             className="text-gray-600 dark:text-gray-300 flex items-start gap-2"
                           >
-                            <span className="text-[#4361EE] mt-1">•</span>
+                            <span className="text-[#4361EE] dark:text-[#A5B8FF] mt-1">•</span>
                             <span>{teza}</span>
                           </li>
                         );
@@ -241,7 +234,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                           key={idx}
                           className="text-gray-600 dark:text-gray-300 flex items-start gap-2"
                         >
-                          <span className="text-[#4361EE] mt-1">•</span>
+                          <span className="text-[#4361EE] dark:text-[#A5B8FF] mt-1">•</span>
                           <span>
                             {teza.titlu} ({teza.autor})
                           </span>
@@ -258,10 +251,10 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <FileText className="w-5 h-5 text-[#4361EE]" />
+                    <FileText className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
                     <h2 className="text-xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                       Proiecte de cercetare
                     </h2>
@@ -272,7 +265,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                         key={idx}
                         className="text-gray-600 dark:text-gray-300 flex items-start gap-2"
                       >
-                        <span className="text-[#4361EE] mt-1">•</span>
+                        <span className="text-[#4361EE] dark:text-[#A5B8FF] mt-1">•</span>
                         <span>{proiect}</span>
                       </li>
                     ))}
@@ -286,10 +279,10 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-[#4CC9F0]/20 dark:border-gray-700"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <Briefcase className="w-5 h-5 text-[#4361EE]" />
+                    <Briefcase className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
                     <h2 className="text-xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                       Profiluri academice
                     </h2>
@@ -303,7 +296,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                             key={idx}
                             className="text-gray-600 dark:text-gray-300 flex items-start gap-2"
                           >
-                            <span className="text-[#4361EE] mt-1">•</span>
+                            <span className="text-[#4361EE] dark:text-[#A5B8FF] mt-1">•</span>
                             <span>{profil}</span>
                           </li>
                         );
@@ -315,12 +308,12 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                           key={idx}
                           className="text-gray-600 dark:text-gray-300 flex items-start gap-2"
                         >
-                          <span className="text-[#4361EE] mt-1">•</span>
+                          <span className="text-[#4361EE] dark:text-[#A5B8FF] mt-1">•</span>
                           <a
                             href={profil.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#4361EE] hover:text-[#7209B7] transition-colors inline-flex items-center gap-1"
+                            className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors inline-flex items-center gap-1"
                           >
                             <ExternalLink className="w-3 h-3" />
                             <span>{profil.tip}</span>
@@ -339,10 +332,10 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-[#4CC9F0]/20 dark:border-gray-700 mt-8"
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-[#4CC9F0]/20 dark:border-gray-700 mt-8"
               >
                 <div className="flex items-center gap-2 mb-6">
-                  <BookOpen className="w-5 h-5 text-[#4361EE]" />
+                  <BookOpen className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
                   <h2 className="text-xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                     Publicații relevante
                   </h2>
@@ -384,7 +377,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                             </span>
                           )}
                           {pub.year && (
-                            <span className="text-sm text-[#4361EE] dark:text-[#4CC9F0]">
+                            <span className="text-sm text-[#4361EE] dark:text-[#A5B8FF]">
                               {pub.year}
                             </span>
                           )}
@@ -393,7 +386,7 @@ export function ProfesorProfile({ data }: ProfesorProfileProps) {
                               href={pub.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-sm text-[#4361EE] hover:text-[#7209B7] transition-colors inline-flex items-center gap-1"
+                              className="text-sm text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] transition-colors inline-flex items-center gap-1"
                             >
                               <ExternalLink className="w-3 h-3" />
                               <span>Vezi publicația</span>

@@ -97,7 +97,7 @@ export function MasterADADetails() {
   const getOptionalityColor = (optional: string) => {
     switch(optional) {
       case 'M': return 'bg-[#4361EE] text-white';
-      case 'E': return 'bg-[#4CC9F0] text-white';
+      case 'E': return 'bg-[#4361EE] text-white';
       case 'I': return 'bg-[#7209B7] text-white';
       default: return 'bg-gray-500 text-white';
     }
@@ -115,8 +115,8 @@ export function MasterADADetails() {
   const getExamTypeColor = (examType: string) => {
     switch(examType) {
       case 'Exam': return 'bg-[#7209B7] text-white';
-      case 'Assessment': return 'bg-[#4895EF] text-white';
-      case 'Colloquium': return 'bg-[#4CC9F0] text-white';
+      case 'Assessment': return 'bg-[#4361EE] text-white';
+      case 'Colloquium': return 'bg-[#4361EE] text-white';
       default: return 'bg-gray-400 text-white';
     }
   };
@@ -138,7 +138,7 @@ export function MasterADADetails() {
               {masterInfo.type}
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-[#4895EF] via-[#4CC9F0] to-[#4361EE] bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl mb-4 text-[#3A0CA3] dark:text-[#4CC9F0]">
             {masterInfo.title}
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">{masterInfo.language}</p>
@@ -146,15 +146,15 @@ export function MasterADADetails() {
           
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <GraduationCap className="w-5 h-5 text-[#4895EF] dark:text-[#4CC9F0]" />
+              <GraduationCap className="w-5 h-5 text-[#4361EE] dark:text-[#4895EF]" />
               <span>{masterInfo.duration}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <Users className="w-5 h-5 text-[#4895EF] dark:text-[#4CC9F0]" />
+              <Users className="w-5 h-5 text-[#4361EE] dark:text-[#4895EF]" />
               <span>Coordinator: {masterInfo.coordinator}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <Globe className="w-5 h-5 text-[#4895EF] dark:text-[#4CC9F0]" />
+              <Globe className="w-5 h-5 text-[#4361EE] dark:text-[#4895EF]" />
               <span>{masterInfo.year}</span>
             </div>
           </div>
@@ -193,7 +193,7 @@ export function MasterADADetails() {
           className="mb-20"
         >
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#4895EF] to-[#4CC9F0] text-white px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
               <Brain className="w-4 h-4" />
               <span className="text-sm">CURRICULUM</span>
             </div>
@@ -211,7 +211,7 @@ export function MasterADADetails() {
                 onClick={() => setSelectedYear(1)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   selectedYear === 1
-                    ? 'bg-[#4895EF] text-white shadow-lg'
+                    ? 'bg-[#4361EE] text-white shadow-lg'
                     : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
               >
@@ -221,7 +221,7 @@ export function MasterADADetails() {
                 onClick={() => setSelectedYear(2)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   selectedYear === 2
-                    ? 'bg-[#4895EF] text-white shadow-lg'
+                    ? 'bg-[#4361EE] text-white shadow-lg'
                     : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
               >
@@ -235,7 +235,7 @@ export function MasterADADetails() {
                 onClick={() => setSelectedSemester(1)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   selectedSemester === 1
-                    ? 'bg-[#4CC9F0] text-white shadow-lg'
+                    ? 'bg-[#4361EE] text-white shadow-lg'
                     : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
               >
@@ -245,7 +245,7 @@ export function MasterADADetails() {
                 onClick={() => setSelectedSemester(2)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   selectedSemester === 2
-                    ? 'bg-[#4CC9F0] text-white shadow-lg'
+                    ? 'bg-[#4361EE] text-white shadow-lg'
                     : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
               >
@@ -262,7 +262,7 @@ export function MasterADADetails() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="master-subject-card-mobile bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all"
+                className="master-subject-card-mobile bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6 transition-all"
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
@@ -287,7 +287,7 @@ export function MasterADADetails() {
                     href={subject.syllabusLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#4895EF] to-[#4CC9F0] text-white rounded-lg hover:shadow-lg transition-all hover:scale-105"
+                    className="flex items-center gap-2 px-4 py-2 bg-[#4361EE] text-white rounded-lg transition-all"
                   >
                     <BookOpen className="w-5 h-5" />
                     <span className="font-medium">Course Syllabus</span>
@@ -306,15 +306,15 @@ export function MasterADADetails() {
                 <p className="font-medium text-gray-700 dark:text-gray-300 mb-2">Exam Type:</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#7209B7] text-white">Exam</span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4895EF] text-white">Assessment</span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4CC9F0] text-white">Colloquium</span>
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">Assessment</span>
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">Colloquium</span>
                 </div>
               </div>
               <div>
                 <p className="font-medium text-gray-700 dark:text-gray-300 mb-2">Course Type:</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">Mandatory</span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4CC9F0] text-white">Elective</span>
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#4361EE] text-white">Elective</span>
                   <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#7209B7] text-white">Internship</span>
                 </div>
               </div>
@@ -327,10 +327,8 @@ export function MasterADADetails() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="rounded-2xl p-8 md:p-12 text-white text-center"
-          style={{
-            backgroundImage: 'linear-gradient(135deg, #4895EF 0%, #4CC9F0 50%, #4361EE 100%)'
-          }}
+          className="rounded-xl p-8 md:p-12 text-white text-center"
+          style={{ backgroundColor: "#4361EE" }}
         >
           <h3 className="text-3xl mb-4">Start your career in Data Analytics</h3>
           <p className="text-lg max-w-2xl mx-auto opacity-90">

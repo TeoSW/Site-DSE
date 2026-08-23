@@ -50,7 +50,7 @@ export function MasterPrograms() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl mb-4">
-            <span className="bg-gradient-to-r from-[#7209B7] to-[#F72585] bg-clip-text text-transparent">
+            <span className="text-[#3A0CA3] dark:text-[#4CC9F0]">
               Învățare avansată în analiza datelor
             </span>
           </h2>
@@ -68,15 +68,15 @@ export function MasterPrograms() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             onClick={() => window.location.hash = '#/master-asds'}
-            className="bg-gradient-to-br from-[#7209B7]/5 to-[#F72585]/5 rounded-2xl p-8 border border-[#7209B7]/20 hover:shadow-xl transition-all hover:scale-[1.02] cursor-pointer"
+            className="bg-[#7209B7]/5 rounded-xl p-8 border border-[#7209B7]/20 transition-all cursor-pointer"
           >
             <div className="flex items-start gap-4 mb-6">
-              <div className="p-3 bg-gradient-to-br from-[#7209B7] to-[#F72585] rounded-lg">
+              <div className="p-3 bg-[#7209B7] rounded-lg">
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
-                <span className="text-sm text-[#7209B7]">{masterASDS.type}</span>
-                <h3 className="text-2xl mt-1 mb-2">
+                <span className="text-sm text-[#7209B7] dark:text-[#DDB8FF]">{masterASDS.type}</span>
+                <h3 className="text-2xl mt-1 mb-2 text-gray-900 dark:text-white">
                   {masterASDS.title}
                   <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">{masterASDS.subtitle}</span>
                 </h3>
@@ -89,20 +89,20 @@ export function MasterPrograms() {
 
             <div className="mb-6 space-y-3">
               <div className="flex items-center gap-2 text-sm">
-                <Award className="w-4 h-4 text-[#7209B7]" />
+                <Award className="w-4 h-4 text-[#7209B7] dark:text-[#DDB8FF]" />
                 <span className="text-gray-700 dark:text-gray-300">Program de cercetare în statistică și analiză de date</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <BookOpen className="w-4 h-4 text-[#7209B7]" />
+                <BookOpen className="w-4 h-4 text-[#7209B7] dark:text-[#DDB8FF]" />
                 <span className="text-gray-700 dark:text-gray-300">Predare în limba română cu cursuri intensive</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <TrendingUp className="w-4 h-4 text-[#7209B7]" />
+                <TrendingUp className="w-4 h-4 text-[#7209B7] dark:text-[#DDB8FF]" />
                 <span className="text-gray-700 dark:text-gray-300">Focus pe data mining, econometrie și business statistics</span>
               </div>
             </div>
 
-            <div className="inline-flex items-center gap-2 text-sm text-[#7209B7] hover:text-[#F72585] transition-colors group">
+            <div className="inline-flex items-center gap-2 text-sm text-[#7209B7] dark:text-[#DDB8FF] hover:text-[#F72585] transition-colors group">
               Detalii program
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
@@ -114,15 +114,15 @@ export function MasterPrograms() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-gradient-to-br from-[#4895EF]/5 to-[#4CC9F0]/5 rounded-2xl p-8 border border-[#4895EF]/20 hover:shadow-xl transition-all hover:scale-[1.02] cursor-pointer block"
+            className="bg-[#4895EF]/5 rounded-xl p-8 border border-[#4895EF]/20 transition-all cursor-pointer block"
           >
             <div className="flex items-start gap-4 mb-6">
-              <div className="p-3 bg-gradient-to-br from-[#4895EF] to-[#4CC9F0] rounded-lg">
+              <div className="p-3 bg-[#4895EF] rounded-lg">
                 <Globe className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
-                <span className="text-sm text-[#4895EF]">{masterADA.type}</span>
-                <h3 className="text-2xl mt-1 mb-2">
+                <span className="text-sm text-[#4361EE] dark:text-[#4895EF]">{masterADA.type}</span>
+                <h3 className="text-2xl mt-1 mb-2 text-gray-900 dark:text-white">
                   {masterADA.title}
                   <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">{masterADA.subtitle}</span>
                 </h3>
@@ -135,20 +135,20 @@ export function MasterPrograms() {
 
             <div className="mb-6 space-y-3">
               <div className="flex items-center gap-2 text-sm">
-                <Award className="w-4 h-4 text-[#4895EF]" />
+                <Award className="w-4 h-4 text-[#4361EE] dark:text-[#4895EF]" />
                 <span className="text-gray-700 dark:text-gray-300">Program established in {masterADA.year}</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <Globe className="w-4 h-4 text-[#4895EF]" />
+                <Globe className="w-4 h-4 text-[#4361EE] dark:text-[#4895EF]" />
                 <span className="text-gray-700 dark:text-gray-300">Taught 100% in English</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <Database className="w-4 h-4 text-[#4895EF]" />
+                <Database className="w-4 h-4 text-[#4361EE] dark:text-[#4895EF]" />
                 <span className="text-gray-700 dark:text-gray-300">Focused on applied analytics and modern technologies</span>
               </div>
             </div>
 
-            <div className="inline-flex items-center gap-2 text-sm text-[#4895EF] hover:text-[#4CC9F0] transition-colors group">
+            <div className="inline-flex items-center gap-2 text-sm text-[#4361EE] dark:text-[#4895EF] hover:text-[#4CC9F0] transition-colors group">
               Program details
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>

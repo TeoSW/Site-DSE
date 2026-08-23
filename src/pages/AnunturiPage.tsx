@@ -1,18 +1,11 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
 import { Bell, Megaphone } from 'lucide-react';
 
 export default function AnunturiPage() {
-  const [, setShowContent] = useState(false);
-
-  useEffect(() => {
-    setShowContent(true);
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-[#4CC9F0]/5 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 flex flex-col">
+return (
+    <div className="min-h-screen bg-gray-50 flex flex-col dark:bg-gray-900">
       <SimpleHeader/>
       
       <main className="pt-32 pb-24 flex-1">
@@ -25,12 +18,12 @@ export default function AnunturiPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-4">
               <Bell className="w-4 h-4" />
               <span className="text-sm">Anunțuri</span>
             </div>
             <h1 className="text-5xl mb-6">
-              <span className="bg-gradient-to-r from-[#7209B7] via-[#4361EE] to-[#4CC9F0] bg-clip-text text-transparent">
+              <span className="text-[#3A0CA3] dark:text-[#4CC9F0]">
                 Anunțuri Departament
               </span>
             </h1>
@@ -46,8 +39,8 @@ export default function AnunturiPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto text-center"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-12 border border-gray-100 dark:border-gray-700">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#7209B7] via-[#4361EE] to-[#4CC9F0] rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-12 border border-gray-100 dark:border-gray-700">
+              <div className="w-20 h-20 bg-[#7209B7] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Megaphone className="w-10 h-10 text-white" />
               </div>
               <h2 className="text-2xl mb-4 text-gray-900 dark:text-white">

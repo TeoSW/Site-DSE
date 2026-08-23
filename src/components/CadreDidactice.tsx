@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "motion/react";
 import {
   GraduationCap,
   BookOpen,
@@ -7,6 +6,8 @@ import {
   Crown,
   FileText,
   ExternalLink,
+  Search,
+  X,
 } from "lucide-react";
 //---
 // ── Poze profesori ────────────────────────────────────────────────────────────
@@ -132,6 +133,8 @@ const MemberAvatar = ({
 };
 
 export function CadreDidactice() {
+  const [query, setQuery] = useState("");
+
   const conducere = {
     name: "MARIN Erika",
     initials: "ME",
@@ -529,6 +532,13 @@ export function CadreDidactice() {
     },
   ];
 
+  const secretar = {
+    name: "BURCIU Diana",
+    role: "Secretarul Departamentului",
+    email: "diana.burciu@ase.ro",
+    telefon: "+40 21 319 19 00",
+  };
+
   const stats = [
     { number: "43", label: "Cadre didactice" },
     { number: "5", label: "Membri Consiliu" },
@@ -538,10 +548,10 @@ export function CadreDidactice() {
 
   const getInitialsColor = (initials: string) => {
     const colors = [
-      "bg-gradient-to-br from-[#7209B7] to-[#4361EE]",
-      "bg-gradient-to-br from-[#4361EE] to-[#4895EF]",
-      "bg-gradient-to-br from-[#4895EF] to-[#4CC9F0]",
-      "bg-gradient-to-br from-[#4CC9F0] to-[#7209B7]",
+      "bg-[#7209B7]",
+      "bg-[#4361EE]",
+      "bg-[#4895EF]",
+      "bg-[#4CC9F0]",
     ];
     return colors[initials.charCodeAt(0) % colors.length];
   };
@@ -568,34 +578,99 @@ export function CadreDidactice() {
     window.location.hash = `#/profesor/${nameToSlug(name)}`;
   };
 
+  // ── Căutare ────────────────────────────────────────────────────────────────
+  // Ignoră diacriticele, ca „barbulescu” să găsească „BĂRBULESCU”.
+  const normalize = (text: string) =>
+    text
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "") // combining marks
+      .toLowerCase();
+
+  const termeni = normalize(query).split(/\s+/).filter(Boolean);
+
+  const matches = (m: {
+    name: string;
+    position?: string;
+    role?: string;
+    email: string;
+  }) => {
+    if (termeni.length === 0) return true;
+    const haystack = normalize(
+      [m.name, m.position ?? "", m.role ?? "", m.email].join(" "),
+    );
+    // toți termenii trebuie găsiți, în orice ordine
+    return termeni.every((t) => haystack.includes(t));
+  };
+
+  const conducereVizibila = matches(conducere);
+  const consiliuFiltrat = consiliu.filter(matches);
+  const cadreFiltrate = cadre.filter(matches);
+  const secretarVizibil = matches(secretar);
+
+  const areCautare = termeni.length > 0;
+  const totalRezultate =
+    (conducereVizibila ? 1 : 0) +
+    consiliuFiltrat.length +
+    cadreFiltrate.length +
+    (secretarVizibil ? 1 : 0);
+
   return (
     <section className="mt-3 pt-[1.5cm] bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
+        <div
           className="text-center mb-4"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
             <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="text-xs sm:text-sm">ECHIPA NOASTRĂ</span>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.1 }}
+        {/* Căutare */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="relative">
+            <Search className="dse-search-icon w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") setQuery("");
+              }}
+              placeholder="Caută după nume, funcție sau email…"
+              aria-label="Caută în cadrele didactice"
+              autoComplete="off"
+              className="dse-search-input"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                aria-label="Șterge căutarea"
+                className="dse-search-clear absolute right-4 top-1/2 -translate-y-1/2"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+          {areCautare && (
+            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3">
+              {totalRezultate === 0
+                ? "Niciun rezultat"
+                : `${totalRezultate} ${totalRezultate === 1 ? "rezultat" : "rezultate"}`}
+            </p>
+          )}
+        </div>
+
+        {/* Stats — ascunse cât timp se caută */}
+        {!areCautare && (
+        <div
           className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
         >
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-2xl sm:text-3xl lg:text-4xl text-[#4361EE] mb-1 sm:mb-2">
+              <div className="text-2xl sm:text-3xl lg:text-4xl text-[#4361EE] dark:text-[#A5B8FF] mb-1 sm:mb-2">
                 {stat.number}
               </div>
               <p className="text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-300">
@@ -603,23 +678,21 @@ export function CadreDidactice() {
               </p>
             </div>
           ))}
-        </motion.div>
+        </div>
+        )}
 
         {/* Conducere */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.15 }}
+        {conducereVizibila && (
+        <div
           className="mb-16"
         >
           <div className="flex items-center justify-center gap-2 mb-8">
-            <Crown className="w-5 h-5 text-[#F59E0B]" />
-            <h3 className="text-[#3A0CA3] dark:text-[#C77DFF] text-xl">
+            <Crown className="w-5 h-5 text-[#B45309] dark:text-[#F59E0B]" />
+            <h3 className="text-[#3A0CA3] dark:text-[#DDB8FF] text-xl">
               Conducere
             </h3>
           </div>
-          <div className="max-w-2xl mx-auto rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
+          <div className="max-w-2xl mx-auto rounded-xl shadow-sm p-6 border transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
             <div
               id={nameToSlug(conducere.name)}
               className="flex flex-col items-center text-center"
@@ -632,11 +705,11 @@ export function CadreDidactice() {
               <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-1">
                 {conducere.name}
               </h4>
-              <p className="text-[#F59E0B] text-sm mb-3">{conducere.role}</p>
+              <p className="text-[#B45309] dark:text-[#F59E0B] text-sm mb-3">{conducere.role}</p>
               <div className="flex gap-2 justify-center">
                 <button
                   onClick={() => navigateToProfesor(conducere.name)}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-sm"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#7209B7] text-white rounded-lg transition-all duration-200 text-sm"
                 >
                   <ExternalLink className="w-4 h-4" />
                   <span>Mai mult despre</span>
@@ -646,7 +719,7 @@ export function CadreDidactice() {
                     href={conducere.cvUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-[#047857] text-white rounded-lg transition-all duration-200 text-sm"
                   >
                     <FileText className="w-4 h-4" />
                     <span>CV</span>
@@ -655,32 +728,26 @@ export function CadreDidactice() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
+        )}
 
         {/* Consiliul Departamentului */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.2 }}
+        {consiliuFiltrat.length > 0 && (
+        <div
           className="mb-16"
         >
           <div className="flex items-center justify-center gap-2 mb-8">
-            <Users className="w-6 h-6 text-[#4361EE]" />
-            <h3 className="text-[#3A0CA3] dark:text-[#C77DFF]">
+            <Users className="w-6 h-6 text-[#4361EE] dark:text-[#A5B8FF]" />
+            <h3 className="text-[#3A0CA3] dark:text-[#DDB8FF]">
               Consiliul Departamentului
             </h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {consiliu.map((member, index) => (
-              <motion.div
+            {consiliuFiltrat.map((member, index) => (
+              <div
                 key={index}
                 id={nameToSlug(member.name)}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700"
+                className="rounded-xl shadow-sm p-6 border transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700"
               >
                 <div className="flex flex-col items-center text-center">
                   <MemberAvatar
@@ -691,14 +758,14 @@ export function CadreDidactice() {
                   <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0] mb-1">
                     {member.name}
                   </h4>
-                  <p className="text-[#4361EE] text-sm mb-1">{member.role}</p>
+                  <p className="text-[#4361EE] dark:text-[#A5B8FF] text-sm mb-1">{member.role}</p>
                   <p className="text-gray-600 dark:text-gray-400 text-xs mb-3">
                     {member.position}
                   </p>
                   <div className="flex flex-col gap-2 w-full">
                     <button
                       onClick={() => navigateToProfesor(member.name)}
-                      className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
+                      className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-[#7209B7] text-white rounded-lg transition-all duration-200 text-xs w-full"
                     >
                       <ExternalLink className="w-3 h-3" />
                       <span>Mai mult despre</span>
@@ -712,7 +779,7 @@ export function CadreDidactice() {
                             "noopener,noreferrer",
                           )
                         }
-                        className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
+                        className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-[#047857] text-white rounded-lg transition-all duration-200 text-xs w-full"
                       >
                         <FileText className="w-3 h-3" />
                         <span>CV</span>
@@ -720,34 +787,28 @@ export function CadreDidactice() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
+        )}
 
         {/* Toate Cadrele Didactice */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+        {cadreFiltrate.length > 0 && (
+        <div
         >
           <div className="flex items-center justify-center gap-2 mb-8">
-            <BookOpen className="w-6 h-6 text-[#4361EE]" />
-            <h3 className="text-[#3A0CA3] dark:text-[#C77DFF]">
+            <BookOpen className="w-6 h-6 text-[#4361EE] dark:text-[#A5B8FF]" />
+            <h3 className="text-[#3A0CA3] dark:text-[#DDB8FF]">
               Cadrele Didactice
             </h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {cadre.map((member, index) => (
-              <motion.div
+            {cadreFiltrate.map((member, index) => (
+              <div
                 key={index}
                 id={nameToSlug(member.name)}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: index * 0.05 }}
-                className="rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700"
+                className="rounded-xl shadow-sm p-6 border transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700"
               >
                 <div className="flex flex-col items-center text-center">
                   <MemberAvatar
@@ -764,7 +825,7 @@ export function CadreDidactice() {
                   <div className="flex flex-col gap-2 w-full">
                     <button
                       onClick={() => navigateToProfesor(member.name)}
-                      className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
+                      className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-[#7209B7] text-white rounded-lg transition-all duration-200 text-xs w-full"
                     >
                       <ExternalLink className="w-3 h-3" />
                       <span>Mai mult despre</span>
@@ -774,7 +835,7 @@ export function CadreDidactice() {
                         href={member.cvUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#10b981] to-[#059669] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs w-full"
+                        className="inline-flex items-center justify-center gap-2 px-3 py-1.5 bg-[#047857] text-white rounded-lg transition-all duration-200 text-xs w-full"
                       >
                         <FileText className="w-3 h-3" />
                         <span>CV</span>
@@ -782,38 +843,51 @@ export function CadreDidactice() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
+        )}
+
         {/* Secretarul Departamentului */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.18 }}
+        {secretarVizibil && (
+        <div
           className="mt-16 mb-20"
         >
           <div className="flex items-center justify-center gap-2 mb-8">
-            <BookOpen className="w-5 h-5 text-[#4895EF]" />
-            <h3 className="text-[#3A0CA3] dark:text-[#C77DFF] text-xl">
+            <BookOpen className="w-5 h-5 text-[#4361EE] dark:text-[#4895EF]" />
+            <h3 className="text-[#3A0CA3] dark:text-[#DDB8FF] text-xl">
               Secretarul Departamentului
             </h3>
           </div>
-          <div className="max-w-2xl mx-auto rounded-2xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
+          <div className="max-w-2xl mx-auto rounded-xl shadow-sm p-6 border transition-all duration-300 bg-white dark:bg-gray-800 border-[#4CC9F0]/20 dark:border-gray-700">
             <div className="flex flex-col items-center text-center gap-1">
               <h4 className="text-[#3A0CA3] dark:text-[#4CC9F0]">
-                BURCIU Diana
+                {secretar.name}
               </h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm">
-                diana.burciu@ase.ro
+                {secretar.email}
               </p>
               <p className="text-gray-500 dark:text-gray-400 text-sm">
-                +40 21 319 19 00
+                {secretar.telefon}
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
+        )}
+
+        {/* Niciun rezultat */}
+        {areCautare && totalRezultate === 0 && (
+          <div className="text-center py-16 mb-16">
+            <Search className="w-6 h-6 text-gray-400 mx-auto mb-4" />
+            <p className="text-gray-600 dark:text-gray-300 mb-1">
+              Niciun rezultat pentru „{query}”
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Încearcă un alt nume, o altă funcție sau un email.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

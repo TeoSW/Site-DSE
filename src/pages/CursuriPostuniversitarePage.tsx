@@ -20,7 +20,7 @@ export default function CursuriPostuniversitarePage() {
       duration: '30 ore / 4-8 zile',
       credits: '3 ECT',
       status: 'În curând',
-      statusColor: 'from-[#7209B7] to-[#B5179E]',
+      statusColor: 'bg-[#7209B7]',
       format: 'La clasă sau online (în funcție de participanți)',
       participants: '10-20 cursanți',
       structure: [
@@ -31,7 +31,7 @@ export default function CursuriPostuniversitarePage() {
         { day: 'Ziua 5', theory: '2 ore', practice: '2 ore', topic: 'Data Mining - Metode avansate', icon: Brain },
         { day: 'Ziua 6', theory: '-', practice: '2 ore', topic: 'Evaluare finală și prezentare proiecte', icon: Award }
       ],
-      gradient: 'from-[#7209B7] to-[#B5179E]',
+      gradient: 'bg-[#7209B7]',
       note: 'Structura pe 6 zile este un exemplu. Programul poate fi adaptat între 4-8 zile în funcție de preferințele participanților.'
     },
     {
@@ -42,7 +42,7 @@ export default function CursuriPostuniversitarePage() {
       duration: '30 ore / 4-6 zile',
       credits: '3 ECT',
       status: 'În curând',
-      statusColor: 'from-[#4361EE] to-[#4CC9F0]',
+      statusColor: 'bg-[#4361EE]',
       format: 'La clasă sau online (în funcție de participanți)',
       participants: '10-20 cursanți',
       structure: [
@@ -53,7 +53,7 @@ export default function CursuriPostuniversitarePage() {
         { day: 'Ziua 5', theory: '2 ore', practice: '2 ore', topic: 'Data Mining - Metode avansate', icon: Brain },
         { day: 'Ziua 6', theory: '-', practice: '2 ore', topic: 'Evaluare finală și prezentare proiecte', icon: Award }
       ],
-      gradient: 'from-[#4361EE] to-[#4CC9F0]'
+      gradient: 'bg-[#4361EE]'
     },
     {
       id: 2,
@@ -63,7 +63,7 @@ export default function CursuriPostuniversitarePage() {
       duration: '30 ore',
       credits: '-',
       status: 'Arhivă',
-      statusColor: 'from-gray-500 to-gray-600',
+      statusColor: 'bg-gray-500',
       format: 'Online',
       participants: '10-20 cursanți',
       structure: [
@@ -72,7 +72,7 @@ export default function CursuriPostuniversitarePage() {
         { day: 'A treia zi', theory: '3 ore', practice: '2 ore', topic: 'Metode avansate de analiză', icon: Target },
         { day: 'A patra zi', theory: '2 ore', practice: '3 ore', topic: 'Aplicații practice și proiecte', icon: Brain }
       ],
-      gradient: 'from-gray-500 to-gray-600',
+      gradient: 'bg-gray-500',
       availableMonths: 'Decembrie 2020, Ianuarie 2021, Februarie 2021, Mai 2021, Iunie 2021, Iulie 2021',
       note: 'Programare cu cel puțin 2 săptămâni după înscrierea cursanților.'
     }
@@ -93,7 +93,7 @@ export default function CursuriPostuniversitarePage() {
         'Aplicații practice în Excel, SPSS, SAS, R Studio sau Python'
       ],
       icon: BarChart3,
-      color: 'from-[#4361EE] to-[#4895EF]'
+      color: 'bg-[#4361EE]'
     },
     {
       module: 'Data Mining',
@@ -108,7 +108,7 @@ export default function CursuriPostuniversitarePage() {
         'Aplicații practice utilizând SPSS, SAS, R Studio sau Python'
       ],
       icon: Brain,
-      color: 'from-[#7209B7] to-[#B5179E]'
+      color: 'bg-[#7209B7]'
     }
   ];
 
@@ -117,25 +117,25 @@ export default function CursuriPostuniversitarePage() {
       title: 'Tehnici moderne de analiză statistică',
       description: 'Univariată și multivariată',
       icon: BarChart3,
-      color: 'from-[#4361EE] to-[#4895EF]'
+      color: 'bg-[#4361EE]'
     },
     {
       title: 'Lucru practic cu instrumente de top',
       description: 'Excel, SAS Studio, SPSS, R Studio sau Python',
       icon: Monitor,
-      color: 'from-[#7209B7] to-[#B5179E]'
+      color: 'bg-[#7209B7]'
     },
     {
       title: 'Strategii de previzionare',
       description: 'Modelare econometrică aplicată',
       icon: Target,
-      color: 'from-[#4CC9F0] to-[#4895EF]'
+      color: 'bg-[#4CC9F0]'
     },
     {
       title: 'Metode de Data Mining',
       description: 'Clusterizare, arbori de decizie, reguli de asociere',
       icon: Brain,
-      color: 'from-[#F72585] to-[#B5179E]'
+      color: 'bg-[#F72585]'
     }
   ];
 
@@ -153,7 +153,7 @@ export default function CursuriPostuniversitarePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-8 bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] text-white shadow-lg">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-8 bg-[#4361EE] text-white shadow-sm">
               <GraduationCap className="w-6 h-6" />
               <span className="text-lg uppercase tracking-wider font-semibold">
                 Program Postuniversitar
@@ -161,7 +161,7 @@ export default function CursuriPostuniversitarePage() {
             </div>
 
             <h1 className="text-5xl md:text-6xl mb-6">
-              <span className="bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] bg-clip-text text-transparent">
+              <span className="text-[#3A0CA3] dark:text-[#4CC9F0]">
                 BUSINESS ANALYSIS
               </span>
             </h1>
@@ -173,15 +173,15 @@ export default function CursuriPostuniversitarePage() {
 
             <div className="flex flex-wrap justify-center gap-4 text-gray-700 dark:text-gray-300">
               <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700">
-                <Clock className="w-5 h-5 text-[#4361EE]" />
+                <Clock className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
                 <span className="font-medium">30 ore intensive</span>
               </div>
               <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700">
-                <Users className="w-5 h-5 text-[#7209B7]" />
+                <Users className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF]" />
                 <span className="font-medium">10-20 cursanți</span>
               </div>
               <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700">
-                <Monitor className="w-5 h-5 text-[#4CC9F0]" />
+                <Monitor className="w-5 h-5 text-[#4361EE] dark:text-[#4CC9F0]" />
                 <span className="font-medium">La clasă sau online</span>
               </div>
             </div>
@@ -196,9 +196,9 @@ export default function CursuriPostuniversitarePage() {
             className="mb-24"
           >
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#4361EE]/10 to-[#4CC9F0]/10 border-2 border-[#4361EE]/30 px-6 py-3 rounded-full mb-6">
-                <Target className="w-5 h-5 text-[#4361EE]" />
-                <span className="text-sm uppercase tracking-wider text-[#4361EE] font-semibold">Obiective</span>
+              <div className="inline-flex items-center gap-2 bg-[#4361EE]/10 border-2 border-[#4361EE]/30 px-6 py-3 rounded-full mb-6">
+                <Target className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
+                <span className="text-sm uppercase tracking-wider text-[#4361EE] dark:text-[#A5B8FF] font-semibold">Obiective</span>
               </div>
               <h2 className="text-4xl text-[#3A0CA3] dark:text-white mb-6">
                 Ce vei învăța
@@ -215,9 +215,9 @@ export default function CursuriPostuniversitarePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm transition-all duration-300 border border-gray-200 dark:border-gray-700"
                   >
-                    <div className={`w-14 h-14 bg-gradient-to-br ${benefit.color} rounded-xl flex items-center justify-center mb-4`}>
+                    <div className={`w-14 h-14 ${benefit.color} rounded-xl flex items-center justify-center mb-4`}>
                       <Icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="text-lg mb-2 text-[#3A0CA3] dark:text-white">
@@ -241,9 +241,9 @@ export default function CursuriPostuniversitarePage() {
             className="mb-24"
           >
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7]/10 to-[#B5179E]/10 border-2 border-[#7209B7]/30 px-6 py-3 rounded-full mb-6">
-                <Calendar className="w-5 h-5 text-[#7209B7]" />
-                <span className="text-sm uppercase tracking-wider text-[#7209B7] font-semibold">Ediții</span>
+              <div className="inline-flex items-center gap-2 bg-[#7209B7]/10 border-2 border-[#7209B7]/30 px-6 py-3 rounded-full mb-6">
+                <Calendar className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF]" />
+                <span className="text-sm uppercase tracking-wider text-[#7209B7] dark:text-[#DDB8FF] font-semibold">Ediții</span>
               </div>
               <h2 className="text-4xl text-[#3A0CA3] dark:text-white">
                 Ediții disponibile
@@ -258,7 +258,7 @@ export default function CursuriPostuniversitarePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden"
                 >
                   {/* Edition Header */}
                   <button
@@ -268,7 +268,7 @@ export default function CursuriPostuniversitarePage() {
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${edition.statusColor} text-white text-sm font-semibold`}>
+                          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${edition.statusColor} text-white text-sm font-semibold`}>
                             <Calendar className="w-4 h-4" />
                             {edition.status}
                           </div>
@@ -280,27 +280,27 @@ export default function CursuriPostuniversitarePage() {
                         
                         <div className="flex flex-wrap gap-4 text-gray-600 dark:text-gray-300">
                           <div className="flex items-center gap-2">
-                            <Clock className="w-5 h-5 text-[#4361EE]" />
+                            <Clock className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF]" />
                             <span>{edition.duration}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Calendar className="w-5 h-5 text-[#7209B7]" />
+                            <Calendar className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF]" />
                             <span>{edition.schedule}</span>
                           </div>
                           {edition.credits !== '-' && (
                             <div className="flex items-center gap-2">
-                              <Award className="w-5 h-5 text-[#4CC9F0]" />
+                              <Award className="w-5 h-5 text-[#4361EE] dark:text-[#4CC9F0]" />
                               <span>{edition.credits}</span>
                             </div>
                           )}
                           <div className="flex items-center gap-2">
-                            <Users className="w-5 h-5 text-[#F72585]" />
+                            <Users className="w-5 h-5 text-[#B5179E] dark:text-[#F72585]" />
                             <span>{edition.participants}</span>
                           </div>
                         </div>
                       </div>
                       
-                      <div className={`flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br ${edition.gradient} flex items-center justify-center text-white transition-transform duration-300 ${expandedEdition === edition.id ? 'rotate-180' : ''}`}>
+                      <div className={`flex-shrink-0 w-12 h-12 rounded-full ${edition.gradient} flex items-center justify-center text-white transition-transform duration-300 ${expandedEdition === edition.id ? 'rotate-180' : ''}`}>
                         <ChevronDown className="w-6 h-6" />
                       </div>
                     </div>
@@ -353,7 +353,7 @@ export default function CursuriPostuniversitarePage() {
                                   className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700"
                                 >
                                   <div className="flex items-center gap-4">
-                                    <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${edition.gradient} rounded-lg flex items-center justify-center`}>
+                                    <div className={`flex-shrink-0 w-12 h-12 ${edition.gradient} rounded-lg flex items-center justify-center`}>
                                       <Icon className="w-6 h-6 text-white" />
                                     </div>
                                     
@@ -398,9 +398,9 @@ export default function CursuriPostuniversitarePage() {
             className="mb-24"
           >
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#4CC9F0]/10 to-[#4895EF]/10 border-2 border-[#4CC9F0]/30 px-6 py-3 rounded-full mb-6">
-                <BookOpen className="w-5 h-5 text-[#4CC9F0]" />
-                <span className="text-sm uppercase tracking-wider text-[#4CC9F0] font-semibold">Curriculum</span>
+              <div className="inline-flex items-center gap-2 bg-[#4CC9F0]/10 border-2 border-[#4CC9F0]/30 px-6 py-3 rounded-full mb-6">
+                <BookOpen className="w-5 h-5 text-[#4361EE] dark:text-[#4CC9F0]" />
+                <span className="text-sm uppercase tracking-wider text-[#4361EE] dark:text-[#4CC9F0] font-semibold">Curriculum</span>
               </div>
               <h2 className="text-4xl text-[#3A0CA3] dark:text-white">
                 Plan de învățământ
@@ -417,9 +417,9 @@ export default function CursuriPostuniversitarePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-200 dark:border-gray-700"
                   >
-                    <div className={`w-16 h-16 bg-gradient-to-br ${module.color} rounded-xl flex items-center justify-center mb-6`}>
+                    <div className={`w-16 h-16 ${module.color} rounded-xl flex items-center justify-center mb-6`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     
@@ -431,7 +431,7 @@ export default function CursuriPostuniversitarePage() {
                       <span className="bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-full text-gray-700 dark:text-gray-300">
                         {module.hours}
                       </span>
-                      <span className="bg-gradient-to-r from-[#4361EE]/10 to-[#4CC9F0]/10 border border-[#4361EE]/30 px-4 py-2 rounded-full text-[#4361EE] dark:text-[#4CC9F0] font-semibold">
+                      <span className="bg-[#4361EE]/10 border border-[#4361EE]/30 px-4 py-2 rounded-full text-[#4361EE] dark:text-[#A5B8FF] font-semibold">
                         {module.credits}
                       </span>
                     </div>
@@ -439,7 +439,7 @@ export default function CursuriPostuniversitarePage() {
                     <ul className="space-y-3">
                       {module.topics.map((topic, topicIndex) => (
                         <li key={topicIndex} className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
-                          <CheckCircle2 className="w-5 h-5 text-[#4361EE] flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF] flex-shrink-0 mt-0.5" />
                           <span>{topic}</span>
                         </li>
                       ))}
@@ -458,9 +458,9 @@ export default function CursuriPostuniversitarePage() {
             transition={{ duration: 0.6 }}
             className="mb-24"
           >
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#F72585]/5 to-[#B5179E]/5 border-2 border-[#F72585]/20 rounded-2xl p-10">
+            <div className="max-w-4xl mx-auto bg-[#F72585]/5 border-2 border-[#F72585]/20 rounded-xl p-10">
               <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#F72585] to-[#B5179E] rounded-xl flex items-center justify-center">
+                <div className="flex-shrink-0 w-16 h-16 bg-[#F72585] rounded-xl flex items-center justify-center">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -468,7 +468,7 @@ export default function CursuriPostuniversitarePage() {
                     Cui i se adresează
                   </h2>
                   <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Programul este recomandat <span className="font-semibold text-[#F72585]">profesioniștilor și absolvenților</span> cu 
+                    Programul este recomandat <span className="font-semibold text-[#B5179E] dark:text-[#F72585]">profesioniștilor și absolvenților</span> cu 
                     cunoștințe de bază în prelucrarea și analiza datelor, familiarizați cu utilizarea <span className="font-semibold">Excel</span> și/sau 
                     a altor aplicații de analiză statistică. Se recomandă un grup omogen din punctul de vedere al nivelului de pregătire pentru 
                     a asigura o experiență optimă de învățare.
@@ -486,7 +486,7 @@ export default function CursuriPostuniversitarePage() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <div className="bg-gradient-to-br from-[#4361EE] to-[#4CC9F0] rounded-2xl p-12 text-center text-white shadow-2xl">
+            <div className="bg-[#4361EE] rounded-xl p-12 text-center text-white shadow-sm">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-4xl mb-6">
                   Informații și înscrieri
@@ -505,7 +505,7 @@ export default function CursuriPostuniversitarePage() {
                   </p>
                   <a 
                     href="mailto:cristina.boboc@csie.ase.ro"
-                    className="inline-flex items-center gap-3 bg-white text-[#4361EE] px-8 py-4 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg font-semibold"
+                    className="inline-flex items-center gap-3 bg-white text-[#4361EE] px-8 py-4 rounded-full transition-all duration-300 text-lg font-semibold"
                   >
                     <Mail className="w-5 h-5" />
                     cristina.boboc@csie.ase.ro

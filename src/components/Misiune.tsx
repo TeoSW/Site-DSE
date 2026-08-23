@@ -49,7 +49,7 @@ export function Misiune() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-4">
             <Target className="w-4 h-4" />
             <span className="text-sm">Misiune</span>
           </div>
@@ -97,12 +97,12 @@ export function Misiune() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm transition-all duration-300 border border-[#4CC9F0]/20 dark:border-gray-700"
             >
               <div className="flex flex-col">
                 {/* Icon and Title */}
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="bg-gradient-to-br from-[#7209B7] to-[#4361EE] rounded-xl p-4 mb-4">
+                  <div className="bg-[#7209B7] rounded-xl p-4 mb-4">
                     <mission.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-[#3A0CA3] dark:text-[#4CC9F0]">{mission.title}</h3>
@@ -114,7 +114,7 @@ export function Misiune() {
                   <ul className="space-y-2 mb-4">
                     {mission.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-[#4361EE] flex-shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-[#4361EE] dark:text-[#A5B8FF] flex-shrink-0 mt-0.5" />
                         <span className="text-gray-600 dark:text-gray-300 leading-relaxed">{bullet}</span>
                       </li>
                     ))}

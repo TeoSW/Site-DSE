@@ -37,7 +37,7 @@ export function DoctoralProgram() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl mb-4">
-            <span className="bg-gradient-to-r from-[#7209B7] to-[#4895EF] bg-clip-text text-transparent">
+            <span className="text-[#3A0CA3] dark:text-[#4CC9F0]">
               Doctorat în Cibernetică și Statistică
             </span>
           </h2>
@@ -51,14 +51,14 @@ export function DoctoralProgram() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 border border-gray-200 dark:border-gray-600 shadow-xl"
+          className="bg-white dark:bg-gray-800 rounded-xl p-8 md:p-12 border border-gray-200 dark:border-gray-600 shadow-sm"
         >
           <div className="flex items-start gap-6 mb-8">
-            <div className="p-4 bg-gradient-to-br from-[#7209B7] to-[#4895EF] rounded-xl">
+            <div className="p-4 bg-[#7209B7] rounded-xl">
               <Award className="w-8 h-8 text-white" />
             </div>
             <div className="flex-1">
-              <span className="text-sm text-[#7209B7] dark:text-[#4CC9F0] uppercase tracking-wider">Școala Doctorală</span>
+              <span className="text-sm text-[#7209B7] dark:text-[#DDB8FF] uppercase tracking-wider">Școala Doctorală</span>
               <h3 className="text-3xl mt-2 mb-3 dark:text-white">{doctoralSchool.title}</h3>
               <p className="text-gray-600 dark:text-gray-300 max-w-3xl mb-4">
                 Școala doctorală își propune să își mențină și să își consolideze statutul de lider al cercetării doctorale 
@@ -71,7 +71,7 @@ export function DoctoralProgram() {
           <div className="mb-8 text-center">
             <a
               href="#/doctorat"
-              className="inline-flex items-center gap-2 text-sm bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 text-sm bg-[#7209B7] text-white px-6 py-2.5 rounded-full transition-all duration-300"
             >
               Mai multe informații despre doctorat
               <Award className="w-4 h-4" />
@@ -98,15 +98,15 @@ export function DoctoralProgram() {
               <h4 className="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-4">Obiective principale</h4>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <TrendingUp className="w-5 h-5 text-[#7209B7] dark:text-[#4CC9F0] flex-shrink-0 mt-0.5" />
+                  <TrendingUp className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF] flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gray-700 dark:text-gray-300">Creșterea performanței științifice și academice a cercetătorilor</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Globe className="w-5 h-5 text-[#7209B7] dark:text-[#4CC9F0] flex-shrink-0 mt-0.5" />
+                  <Globe className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF] flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gray-700 dark:text-gray-300">Pregătirea doctoranzilor pentru cercetare de vârf în comunitatea internațională</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Database className="w-5 h-5 text-[#7209B7] dark:text-[#4CC9F0] flex-shrink-0 mt-0.5" />
+                  <Database className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF] flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gray-700 dark:text-gray-300">Dezvoltarea de produse și servicii inovative bazate pe cercetare avansată</p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export function DoctoralProgram() {
             href={doctoralSchool.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[#7209B7] dark:text-[#4CC9F0] hover:text-[#F72585] dark:hover:text-[#F72585] transition-colors group mt-4"
+            className="inline-flex items-center gap-2 text-sm text-[#7209B7] dark:text-[#DDB8FF] hover:text-[#F72585] dark:hover:text-[#F72585] transition-colors group mt-4"
           >
             Vezi Școala Doctorală CSE
             <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

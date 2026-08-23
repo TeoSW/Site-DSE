@@ -194,10 +194,10 @@ export default function Header({ showContent = true }: HeaderProps) {
               className={`${isMobile ? "hidden" : "flex"} items-center gap-8`}
             >
               <div className="relative group border-r border-[whitesmoke] pr-8">
-                <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] hover:scale-105 transition-all duration-200">
+                <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] transition-all duration-200">
                   Despre noi <ChevronDown className="w-4 h-4" />
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-xl py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <a
                     href="#/istoric"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
@@ -220,10 +220,10 @@ export default function Header({ showContent = true }: HeaderProps) {
               </div>
 
               <div className="relative group border-r border-[whitesmoke] pr-8">
-                <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] hover:scale-105 transition-all duration-200">
+                <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] transition-all duration-200">
                   Programe studii <ChevronDown className="w-4 h-4" />
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-xl py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <a
                     href="#licenta"
                     onClick={(e) => {
@@ -264,10 +264,10 @@ export default function Header({ showContent = true }: HeaderProps) {
               </div>
 
               <div className="relative group border-r border-[whitesmoke] pr-8">
-                <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] hover:scale-105 transition-all duration-200">
+                <button className="flex items-center gap-1 text-lg text-gray-300 hover:text-[#4CC9F0] transition-all duration-200">
                   Studenți <ChevronDown className="w-4 h-4" />
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-xl py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-sm py-2 border border-[whitesmoke] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   <a
                     href="#/activitati-viitoare"
                     className="block px-4 py-2 text-base text-gray-300 hover:bg-[#4CC9F0]/10 hover:text-[#4CC9F0] transition-all duration-200"
@@ -361,7 +361,7 @@ export default function Header({ showContent = true }: HeaderProps) {
 
               <a
                 href="#/cercetare"
-                className="text-lg text-gray-300 hover:text-[#4CC9F0] hover:scale-105 transition-all duration-200 border-r border-[whitesmoke] pr-8"
+                className="text-lg text-gray-300 hover:text-[#4CC9F0] transition-all duration-200 border-r border-[whitesmoke] pr-8"
               >
                 Cercetare
               </a>
@@ -371,7 +371,7 @@ export default function Header({ showContent = true }: HeaderProps) {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className="text-lg text-gray-300 hover:text-[#4CC9F0] hover:scale-105 transition-all duration-200 border-r border-[whitesmoke] pr-8 cursor-pointer"
+                className="text-lg text-gray-300 hover:text-[#4CC9F0] transition-all duration-200 border-r border-[whitesmoke] pr-8 cursor-pointer"
               >
                 Contact
               </a>
@@ -379,11 +379,8 @@ export default function Header({ showContent = true }: HeaderProps) {
                 href="https://csie.ase.ro/oferta-de-mobilitati-erasmus/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 text-white rounded-md hover:shadow-lg hover:scale-105 transition-all duration-200 text-base font-medium"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
-                }}
+                className="px-5 py-2.5 text-white rounded-md transition-all duration-200 text-base font-medium"
+                style={{ background: "#4361EE" }}
               >
                 Erasmus+
               </a>
@@ -629,10 +626,7 @@ export default function Header({ showContent = true }: HeaderProps) {
                     rel="noopener noreferrer"
                     onClick={() => setIsMenuOpen(false)}
                     className="block py-2 px-4 text-center text-white rounded-md transition-all font-medium"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #00BCD4 0%, #4CAF50 100%)",
-                    }}
+                    style={{ background: "#4361EE" }}
                   >
                     Erasmus+
                   </a>

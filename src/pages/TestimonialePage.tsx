@@ -78,7 +78,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
           
           {/* Header */}
           <div className="text-center mb-16" style={{ marginTop: "1.5cm" }}>
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-8">
               <MessageCircle className="w-4 h-4" />
               <span className="text-sm">TESTIMONIALE</span>
             </div>
@@ -92,7 +92,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
             {testimoniale.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-[#4CC9F0]/20 dark:border-gray-700 overflow-hidden"
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-[#4CC9F0]/20 dark:border-gray-700 overflow-hidden"
               >
                 {/* Image Section */}
                 {testimonial.image && (
@@ -104,7 +104,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                           alt="Echipa câștigătoare WiDS Datathon"
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div className="absolute inset-0 bg-black/60"></div>
                         <div className="absolute bottom-6 left-6 right-6">
                           <div className="flex flex-wrap gap-2">
                             {testimonial.awards.map((award, idx) => (
@@ -112,7 +112,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                                 key={idx}
                                 className="inline-flex items-center gap-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm px-4 py-2 rounded-full border border-[#F59E0B]/30"
                               >
-                                <Award className="w-4 h-4 text-[#F59E0B]" />
+                                <Award className="w-4 h-4 text-[#B45309] dark:text-[#F59E0B]" />
                                 <span className="text-sm font-semibold text-gray-900 dark:text-white">{award}</span>
                               </div>
                             ))}
@@ -121,7 +121,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                       </div>
                     ) : (
                       <div className="flex justify-center pt-8">
-                        <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-[#4361EE]/20 dark:border-[#4CC9F0]/30 shadow-xl">
+                        <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-[#4361EE]/20 dark:border-[#4CC9F0]/30 shadow-sm">
                           <img 
                             src={testimonial.image} 
                             alt={testimonial.authors[0]}
@@ -136,7 +136,7 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                 {/* Content Section */}
                 <div className="p-8 md:p-12">
                   <div className="flex justify-center mb-8">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#7209B7] to-[#4361EE] rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 bg-[#7209B7] rounded-full flex items-center justify-center">
                       <Quote className="w-8 h-8 text-white" />
                     </div>
                   </div>
@@ -155,8 +155,8 @@ Sunt foarte recunoscătoare pentru ce am învățat la CSIE. Anii de facultate a
                       <div className="mb-3">
                         {testimonial.authors.map((author, idx) => (
                           <span key={idx} className="inline-block">
-                            <span className="font-semibold text-[#4361EE] dark:text-[#4CC9F0]">{author}</span>
-                            {idx < testimonial.authors.length - 1 && <span className="text-gray-400 mx-2">•</span>}
+                            <span className="font-semibold text-[#4361EE] dark:text-[#A5B8FF]">{author}</span>
+                            {idx < testimonial.authors.length - 1 && <span className="text-gray-500 dark:text-gray-400 mx-2">•</span>}
                           </span>
                         ))}
                       </div>

@@ -7,7 +7,7 @@ export function CardsSection() {
 
   return (
     <div
-      className="relative bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-16"
+      className="relative bg-gray-50 py-16 dark:bg-gray-800"
       style={{ minHeight: "30vh" }}
     >
       <div className="w-full flex items-center justify-center">
@@ -19,7 +19,7 @@ export function CardsSection() {
           className="flex gap-16 px-8 cards-section-container"
         >
           {/* Programe de studii */}
-          <div className="bg-white dark:bg-gray-800 shadow-xl p-12 w-[28rem] rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 card-section-item">
+          <div className="bg-white dark:bg-gray-800 shadow-sm p-12 w-[28rem] rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 card-section-item">
             <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-6 pb-4 border-b-2 border-[#7209B7] text-center card-section-title">
               Programe de studii
             </h3>
@@ -34,7 +34,7 @@ export function CardsSection() {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all cursor-pointer"
+                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all cursor-pointer"
                 >
                   • <span className="font-medium">Licență:</span> Statistică
                   aplicată și Data Science
@@ -43,7 +43,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/master-asds"
-                  className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
+                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all"
                 >
                   • <span className="font-medium">Master:</span> Statistică
                   aplicată și Data Science
@@ -52,7 +52,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/master-ada"
-                  className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
+                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all"
                 >
                   • <span className="font-medium">Master:</span> Applied data
                   analytics
@@ -61,7 +61,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cursuri-postuniversitare"
-                  className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
+                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all"
                 >
                   •{" "}
                   <span className="font-medium">Cursuri postuniversitare</span>
@@ -70,7 +70,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/doctorat"
-                  className="hover:text-[#7209B7] hover:translate-x-1 inline-block transition-all"
+                  className="hover:text-[#7209B7] dark:text-[#DDB8FF] hover:translate-x-1 inline-block transition-all"
                 >
                   • <span className="font-medium">Doctorat:</span> Cibernetică
                   și Statistică Economică
@@ -80,7 +80,7 @@ export function CardsSection() {
           </div>
 
           {/* Utile pentru studenți */}
-          <div className="bg-white dark:bg-gray-800 shadow-xl p-12 w-[28rem] rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 card-section-item">
+          <div className="bg-white dark:bg-gray-800 shadow-sm p-12 w-[28rem] rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 card-section-item">
             <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-6 pb-4 border-b-2 border-[#7209B7] hover:border-[#B5179E] transition-colors text-center card-section-title">
               Utile pentru studenți
             </h3>
@@ -88,7 +88,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cariera"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Carieră</span> - Oportunități
                   și internship-uri
@@ -97,7 +97,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/orar"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Orar</span> - Programa
                   cursurilor
@@ -106,7 +106,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/databases"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Baze de date</span> - Resurse
                   pentru analiză
@@ -115,7 +115,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/instrumente-analiza"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Instrumente</span> - Software
                   pentru analiză
@@ -124,7 +124,7 @@ export function CardsSection() {
               <li>
                 <button
                   onClick={() => setIsMapOpen(true)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block text-left w-full cursor-pointer"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block text-left w-full cursor-pointer"
                 >
                   • <span className="font-medium">Campus ASE</span> - Locații și
                   săli
@@ -134,7 +134,7 @@ export function CardsSection() {
           </div>
 
           {/* Cercetare */}
-          <div className="bg-white dark:bg-gray-800 shadow-xl p-12 w-[28rem] rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 card-section-item">
+          <div className="bg-white dark:bg-gray-800 shadow-sm p-12 w-[28rem] rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 card-section-item">
             <a href="#/cercetare">
               <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-6 pb-4 border-b-2 border-[#7209B7] hover:border-[#B5179E] transition-colors text-center card-section-title">
                 Cercetare
@@ -144,7 +144,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Conferința ICAS</span>
                 </a>
@@ -152,7 +152,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Revista JSES</span>
                 </a>
@@ -160,7 +160,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Centrul de sondaje</span>
                 </a>
@@ -168,7 +168,7 @@ export function CardsSection() {
               <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Data Science Lab</span>
                 </a>
@@ -176,7 +176,7 @@ export function CardsSection() {
                             <li>
                 <a
                   href="#/cercetare"
-                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] text-lg transition-colors block"
+                  className="text-gray-700 dark:text-gray-300 hover:text-[#7209B7] dark:text-[#DDB8FF] text-lg transition-colors block"
                 >
                   • <span className="font-medium">Revista ECOCIB </span>
                 </a>

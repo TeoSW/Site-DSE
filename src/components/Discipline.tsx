@@ -7,7 +7,7 @@ const curriculumCategories = [
     count: '15',
     label: 'Analiză și Modelare',
     icon: BarChart3,
-    gradient: 'from-[#7209B7] to-[#B5179E]',
+    gradient: 'bg-[#7209B7]',
     link: 'https://www.csie.ase.ro/licenta/plan-invatamant/'
   },
   {
@@ -15,7 +15,7 @@ const curriculumCategories = [
     count: '10',
     label: 'Pregătire Economică',
     icon: TrendingUp,
-    gradient: 'from-[#F72585] to-[#B5179E]',
+    gradient: 'bg-[#F72585]',
     link: 'https://www.csie.ase.ro/licenta/plan-invatamant/'
   },
   {
@@ -23,7 +23,7 @@ const curriculumCategories = [
     count: '11',
     label: 'Computer Science',
     icon: Database,
-    gradient: 'from-[#4CC9F0] to-[#4895EF]',
+    gradient: 'bg-[#4CC9F0]',
     link: 'https://www.csie.ase.ro/licenta/plan-invatamant/'
   },
 ];
@@ -43,7 +43,7 @@ export function Discipline() {
             Curriculum-ul Nostru
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
-            Explorează toate cele <a href="https://www.csie.ase.ro/licenta/plan-invatamant/" target="_blank" rel="noopener noreferrer" className="text-[#4361EE] dark:text-[#4CC9F0] font-semibold hover:underline">36 de discipline</a> din programul de licență. Apasă pe oricare curs pentru a vedea descrierea detaliată.
+            Explorează toate cele <a href="https://www.csie.ase.ro/licenta/plan-invatamant/" target="_blank" rel="noopener noreferrer" className="text-[#4361EE] dark:text-[#A5B8FF] font-semibold hover:underline">36 de discipline</a> din programul de licență. Apasă pe oricare curs pentru a vedea descrierea detaliată.
           </p>
         </motion.div>
 
@@ -65,7 +65,7 @@ export function Discipline() {
                   scale: 1.05,
                   boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
                 }}
-                className={`relative overflow-hidden rounded-3xl p-8 text-white cursor-pointer bg-gradient-to-br ${category.gradient} shadow-xl`}
+                className={`relative overflow-hidden rounded-3xl p-8 text-white cursor-pointer ${category.gradient} shadow-xl`}
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">

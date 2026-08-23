@@ -18,21 +18,21 @@ export function Doctorat() {
       id: 0,
       title: "Ediția 11 martie 2026",
       status: "În curând",
-      statusColor: "from-[#7209B7] to-[#B5179E]",
+      statusColor: "bg-[#7209B7]",
       image: DataLunch1,
     },
     {
       id: 1,
       title: "Ediția anterioară 2",
       status: "Arhivă",
-      statusColor: "from-[#4361EE] to-[#4CC9F0]",
+      statusColor: "bg-[#4361EE]",
       image: DataLunch2,
     },
     {
       id: 2,
       title: "Ediția anterioară 1",
       status: "Arhivă",
-      statusColor: "from-gray-500 to-gray-600",
+      statusColor: "bg-gray-500",
       image: DataLunch1,
     },
   ];
@@ -50,7 +50,7 @@ export function Doctorat() {
           className="text-center mb-12"
           style={{ marginTop: "1.5cm" }}
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-4">
             <GraduationCap className="w-4 h-4" />
             <span className="text-sm">Studii Doctorale</span>
           </div>
@@ -66,7 +66,7 @@ export function Doctorat() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gradient-to-r from-[#7209B7] to-[#4361EE] rounded-3xl p-12 text-white mb-16 shadow-2xl"
+          className="bg-[#7209B7] rounded-3xl p-12 text-white mb-16 shadow-sm"
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -92,22 +92,22 @@ export function Doctorat() {
               </ul>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
                 <Search className="w-8 h-8 mx-auto mb-3" />
                 <div className="text-3xl font-bold mb-2">50+</div>
                 <p className="text-sm">Proiecte de cercetare active</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
                 <Award className="w-8 h-8 mx-auto mb-3" />
                 <div className="text-3xl font-bold mb-2">100+</div>
                 <p className="text-sm">Publicații ISI anual</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
                 <BookOpen className="w-8 h-8 mx-auto mb-3" />
                 <div className="text-3xl font-bold mb-2">20+</div>
                 <p className="text-sm">Conducători doctorali</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
                 <GraduationCap className="w-8 h-8 mx-auto mb-3" />
                 <div className="text-3xl font-bold mb-2">150+</div>
                 <p className="text-sm">Doctori formați</p>
@@ -125,11 +125,11 @@ export function Doctorat() {
           className="mb-16"
         >
           <div className="flex items-center justify-center gap-2 mb-6">
-            <BookOpen className="w-6 h-6 text-[#7209B7]" />
+            <BookOpen className="w-6 h-6 text-[#7209B7] dark:text-[#DDB8FF]" />
             <h3 className="text-2xl font-bold text-[#3A0CA3] dark:text-white">Data&amp;Lunch</h3>
           </div>
 
-          <div className="bg-gradient-to-br from-[#4361EE]/5 to-[#4CC9F0]/5 dark:from-[#4361EE]/20 dark:to-[#4CC9F0]/20 rounded-2xl shadow-lg border border-[#4361EE]/30 dark:border-gray-700 p-8">
+          <div className="bg-[#4361EE]/5 rounded-xl shadow-sm border border-[#4361EE]/30 dark:border-gray-700 p-8 dark:bg-[#4361EE]/20">
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               <strong>Seminar științific organizat sub îndrumarea școlii doctorale.</strong>
               <br /><br />
@@ -140,7 +140,7 @@ export function Doctorat() {
             </p>
 
             <div className="mb-8">
-              <h5 className="text-[#4361EE] dark:text-[#4CC9F0] font-bold mb-4">Ce aduce Data&amp;Lunch:</h5>
+              <h5 className="text-[#4361EE] dark:text-[#A5B8FF] font-bold mb-4">Ce aduce Data&amp;Lunch:</h5>
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-[#7209B7] rounded-full mt-2"></div>
@@ -173,7 +173,7 @@ export function Doctorat() {
             {/* Ediții */}
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <Award className="w-5 h-5 text-[#7209B7]" />
+                <Award className="w-5 h-5 text-[#7209B7] dark:text-[#DDB8FF]" />
                 <h4 className="text-xl font-bold text-[#3A0CA3] dark:text-white">Ediții trecute</h4>
               </div>
 
@@ -186,11 +186,11 @@ export function Doctorat() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: edition.id * 0.1 }}
                     onClick={() => setPopupImage(edition.image)}
-                    className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl hover:scale-[1.01] transition-all duration-200 text-left p-6"
+                    className="w-full bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-200 text-left p-6"
                   >
                     <div className="flex items-center justify-between gap-4">
                       <div>
-                        <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r ${edition.statusColor} text-white text-sm font-semibold mb-3`}>
+                        <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${edition.statusColor} text-white text-sm font-semibold mb-3`}>
                           <Award className="w-3.5 h-3.5" />
                           {edition.status}
                         </div>
@@ -198,7 +198,7 @@ export function Doctorat() {
                           {edition.title}
                         </h4>
                       </div>
-                      <div className="flex-shrink-0 text-gray-400 dark:text-gray-500 text-sm">
+                      <div className="flex-shrink-0 text-gray-500 dark:text-gray-400 text-sm">
                         Vezi foto →
                       </div>
                     </div>
@@ -218,11 +218,11 @@ export function Doctorat() {
           className="mb-16"
         >
           <div className="flex items-center justify-center gap-2 mb-6">
-            <GraduationCap className="w-6 h-6 text-[#7209B7]" />
+            <GraduationCap className="w-6 h-6 text-[#7209B7] dark:text-[#DDB8FF]" />
             <h3 className="text-2xl font-bold text-[#3A0CA3] dark:text-white">Directorul Școlii Doctorale</h3>
           </div>
 
-          <div className="bg-gradient-to-br from-[#7209B7]/5 to-[#4361EE]/5 dark:from-[#7209B7]/20 dark:to-[#4361EE]/20 rounded-2xl shadow-lg border border-[#7209B7]/30 dark:border-gray-700 p-8">
+          <div className="bg-[#7209B7]/5 rounded-xl shadow-sm border border-[#7209B7]/30 dark:border-gray-700 p-8 dark:bg-[#7209B7]/20">
             <div className="text-center mb-6">
               <h4 className="text-xl font-bold text-[#3A0CA3] dark:text-white mb-2">
                 Prof. univ. dr. Emilia ȚIȚAN
@@ -231,7 +231,7 @@ export function Doctorat() {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-[#4CC9F0]/20 dark:border-gray-700">
-                <h5 className="text-[#4361EE] dark:text-[#4CC9F0] font-bold mb-4">Program audiențe</h5>
+                <h5 className="text-[#4361EE] dark:text-[#A5B8FF] font-bold mb-4">Program audiențe</h5>
                 <div className="space-y-3 text-gray-600 dark:text-gray-300">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-[#7209B7] dark:bg-[#B5179E] rounded-full mt-2 flex-shrink-0"></div>
@@ -239,7 +239,7 @@ export function Doctorat() {
                       <span className="text-[#3A0CA3] dark:text-white">ONLINE:</span>{" "}
                       <a
                         href="mailto:emilia.titan@csie.ase.ro"
-                        className="text-[#4361EE] dark:text-[#4CC9F0] hover:text-[#7209B7] dark:hover:text-[#72EFDD] hover:underline transition-colors"
+                        className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#72EFDD] hover:underline transition-colors"
                       >
                         emilia.titan@csie.ase.ro
                       </a>
@@ -253,7 +253,7 @@ export function Doctorat() {
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-[#4CC9F0]/20 dark:border-gray-700">
-                <h5 className="text-[#4361EE] dark:text-[#4CC9F0] font-bold mb-4">Contact</h5>
+                <h5 className="text-[#4361EE] dark:text-[#A5B8FF] font-bold mb-4">Contact</h5>
                 <div className="space-y-3 text-gray-600 dark:text-gray-300">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-[#7209B7] dark:bg-[#B5179E] rounded-full mt-2 flex-shrink-0"></div>
@@ -261,7 +261,7 @@ export function Doctorat() {
                       <span className="text-[#3A0CA3] dark:text-white">Email:</span>{" "}
                       <a
                         href="mailto:emilia.titan@csie.ase.ro"
-                        className="text-[#4361EE] dark:text-[#4CC9F0] hover:text-[#7209B7] dark:hover:text-[#72EFDD] hover:underline transition-colors"
+                        className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#72EFDD] hover:underline transition-colors"
                       >
                         emilia.titan@csie.ase.ro
                       </a>
@@ -273,7 +273,7 @@ export function Doctorat() {
                       <span className="text-[#3A0CA3] dark:text-white">Tel:</span>{" "}
                       <a
                         href="tel:+40213191901"
-                        className="text-[#4361EE] dark:text-[#4CC9F0] hover:text-[#7209B7] dark:hover:text-[#72EFDD] hover:underline transition-colors"
+                        className="text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#7209B7] dark:text-[#DDB8FF] dark:hover:text-[#72EFDD] hover:underline transition-colors"
                       >
                         +4 021 319 19 01, int. 324
                       </a>
@@ -297,7 +297,7 @@ export function Doctorat() {
             href="https://doctorat.ase.ro/programe/cibernetica-si-statistica-economica/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-8 py-4 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold"
+            className="inline-block bg-[#7209B7] text-white px-8 py-4 rounded-full transition-all duration-300 font-semibold"
           >
             Aplică acum pentru doctorat
           </a>
@@ -326,14 +326,14 @@ export function Doctorat() {
             >
               <button
                 onClick={() => setPopupImage(null)}
-                className="absolute -top-4 -right-4 z-10 w-10 h-10 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform"
+                className="absolute -top-4 -right-4 z-10 w-10 h-10 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-sm transition-transform"
               >
                 <X className="w-5 h-5 text-gray-700 dark:text-gray-200" />
               </button>
               <img
                 src={popupImage}
                 alt="Data&amp;Lunch"
-                className="w-full rounded-2xl shadow-2xl object-contain"
+                className="w-full rounded-xl shadow-sm object-contain"
                 style={{ maxHeight: "80vh" }}
               />
             </motion.div>

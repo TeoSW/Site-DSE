@@ -38,7 +38,7 @@ export function Master() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-4">
             <Brain className="w-4 h-4" />
             <span className="text-sm">Programe Master</span>
           </div>
@@ -57,13 +57,13 @@ export function Master() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-[#4CC9F0]/20 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm transition-all duration-300 overflow-hidden group border border-[#4CC9F0]/20 dark:border-gray-700"
             >
               {/* Icon Header */}
-              <div className="bg-gradient-to-r from-[#7209B7] to-[#4361EE] p-8 text-white">
-                <program.icon className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <div className="bg-[#7209B7] p-8 text-white">
+                <program.icon className="w-12 h-12 mb-4 transition-transform duration-300" />
                 <h3 className="mb-2">{program.title}</h3>
-                <div className="flex items-center gap-2 text-[#4CC9F0]">
+                <div className="flex items-center gap-2 text-[#4361EE] dark:text-[#4CC9F0]">
                   <Code className="w-4 h-4" />
                   <span className="text-sm">{program.duration}</span>
                 </div>
@@ -74,12 +74,12 @@ export function Master() {
                 <p className="text-gray-600 mb-6">{program.description}</p>
                 
                 <div className="space-y-2">
-                  <div className="text-sm text-[#7209B7] mb-3">Competențe cheie:</div>
+                  <div className="text-sm text-[#7209B7] dark:text-[#DDB8FF] mb-3">Competențe cheie:</div>
                   <div className="flex flex-wrap gap-2">
                     {program.skills.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="bg-gradient-to-r from-[#4361EE]/10 to-[#4CC9F0]/10 text-[#3A0CA3] px-3 py-1 rounded-full text-sm"
+                        className="bg-[#4361EE]/10 text-[#3A0CA3] px-3 py-1 rounded-full text-sm"
                       >
                         {skill}
                       </span>
@@ -97,7 +97,7 @@ export function Master() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-gradient-to-r from-[#7209B7] to-[#4361EE] rounded-3xl p-12 text-white"
+          className="bg-[#7209B7] rounded-3xl p-12 text-white"
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -127,19 +127,19 @@ export function Master() {
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
                 <div className="text-4xl mb-2">98%</div>
                 <p className="text-sm">Rată de promovare</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
                 <div className="text-4xl mb-2">€3500+</div>
                 <p className="text-sm">Salariu mediu absolvenți</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
                 <div className="text-4xl mb-2">30+</div>
                 <p className="text-sm">Universități partenere</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
                 <div className="text-4xl mb-2">100%</div>
                 <p className="text-sm">Acces la cercetare</p>
               </div>

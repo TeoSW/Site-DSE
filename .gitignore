@@ -1,3 +1,5 @@
 node_modules/
 dist/
 build/
+# Claude Code local tooling (vendored skills, launch config)
+.claude/

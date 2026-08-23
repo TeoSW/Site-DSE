@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { SimpleHeader } from '../components/SimpleHeader';
 import { Footer } from '../components/Footer';
 import { motion } from 'motion/react';
@@ -180,13 +179,6 @@ const presidentiINS = [
 ];
 
 export default function ListeProfesoriPage() {
-  const [, setShowContent] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
       <SimpleHeader />
@@ -200,12 +192,12 @@ export default function ListeProfesoriPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-[#7209B7] text-white px-4 py-2 rounded-full mb-4">
               <BookOpen className="w-4 h-4" />
               <span className="text-sm">ISTORIC & CONDUCERE</span>
             </div>
             <h1 className="text-5xl mb-6">
-              <span className="bg-gradient-to-r from-[#7209B7] via-[#4361EE] to-[#4CC9F0] bg-clip-text text-transparent">
+              <span className="text-[#3A0CA3] dark:text-[#4CC9F0]">
                 Liste Profesori și Conducători
               </span>
             </h1>
@@ -220,10 +212,10 @@ export default function ListeProfesoriPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+            className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
           >
             <div className="flex items-center gap-3 mb-8">
-              <Award className="w-8 h-8 text-[#4361EE]" />
+              <Award className="w-8 h-8 text-[#4361EE] dark:text-[#A5B8FF]" />
               <div>
                 <h2 className="text-2xl text-[#3A0CA3] dark:text-[#4CC9F0]">Șefii Catedrelor de Statistică / Departamentului de Statistică și Econometrie</h2>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">(1951-prezent)</p>
@@ -232,7 +224,7 @@ export default function ListeProfesoriPage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] text-white">
+                  <tr className="bg-[#4361EE] text-white">
                     <th className="border border-blue-300 dark:border-blue-700 px-4 py-3 text-left">Perioada</th>
                     <th className="border border-blue-300 dark:border-blue-700 px-4 py-3 text-left">Prenume și nume</th>
                     <th className="border border-blue-300 dark:border-blue-700 px-4 py-3 text-left">Denumirea catedrei/departamentului</th>
@@ -241,7 +233,7 @@ export default function ListeProfesoriPage() {
                 <tbody>
                   {sefiCatedre.map((item, index) => (
                     <tr key={index} className={index % 2 === 0 ? 'bg-blue-50 dark:bg-gray-700' : 'bg-white dark:bg-gray-800'}>
-                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-[#4361EE] dark:text-[#4CC9F0]">{item.perioada}</td>
+                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-[#4361EE] dark:text-[#A5B8FF]">{item.perioada}</td>
                       <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-gray-800 dark:text-gray-200">{item.nume}</td>
                       <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300">{item.catedra}</td>
                     </tr>
@@ -257,10 +249,10 @@ export default function ListeProfesoriPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+            className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
           >
             <div className="flex items-center gap-3 mb-8">
-              <TrendingUp className="w-8 h-8 text-[#4361EE]" />
+              <TrendingUp className="w-8 h-8 text-[#4361EE] dark:text-[#A5B8FF]" />
               <div>
                 <h2 className="text-2xl text-[#3A0CA3] dark:text-[#4CC9F0]">Președinți ai Institutului Național de Statistică</h2>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Membri ai Departamentului care au condus INS</p>
@@ -269,7 +261,7 @@ export default function ListeProfesoriPage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white">
+                  <tr className="bg-[#7209B7] text-white">
                     <th className="border border-purple-300 dark:border-purple-700 px-4 py-3 text-left">Perioada</th>
                     <th className="border border-purple-300 dark:border-purple-700 px-4 py-3 text-left">Prenume și nume</th>
                   </tr>
@@ -277,7 +269,7 @@ export default function ListeProfesoriPage() {
                 <tbody>
                   {presidentiINS.map((item, index) => (
                     <tr key={index} className={index % 2 === 0 ? 'bg-purple-50 dark:bg-gray-700' : 'bg-white dark:bg-gray-800'}>
-                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-[#7209B7] dark:text-[#4CC9F0]">{item.perioada}</td>
+                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-[#7209B7] dark:text-[#DDB8FF]">{item.perioada}</td>
                       <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-gray-800 dark:text-gray-200">{item.nume}</td>
                     </tr>
                   ))}
@@ -292,10 +284,10 @@ export default function ListeProfesoriPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+            className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
           >
             <div className="flex items-center gap-3 mb-8">
-              <Calendar className="w-8 h-8 text-[#4361EE]" />
+              <Calendar className="w-8 h-8 text-[#4361EE] dark:text-[#A5B8FF]" />
               <div>
                 <h2 className="text-2xl text-[#3A0CA3] dark:text-[#4CC9F0]">Cronologia dezvoltării specializării/programului de Statistică în ISEP/ASE</h2>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">(1948-prezent)</p>
@@ -304,7 +296,7 @@ export default function ListeProfesoriPage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] text-white">
+                  <tr className="bg-[#4361EE] text-white">
                     <th className="border border-blue-300 dark:border-blue-700 px-4 py-3 text-left">Perioada</th>
                     <th className="border border-blue-300 dark:border-blue-700 px-4 py-3 text-left">Facultatea</th>
                     <th className="border border-blue-300 dark:border-blue-700 px-4 py-3 text-left">Specializarea de licență</th>
@@ -314,10 +306,10 @@ export default function ListeProfesoriPage() {
                 <tbody>
                   {cronologieDezvoltare.map((item, index) => (
                     <tr key={index} className={index % 2 === 0 ? 'bg-blue-50 dark:bg-gray-700' : 'bg-white dark:bg-gray-800'}>
-                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-[#4361EE] dark:text-[#4CC9F0]">{item.perioada}</td>
+                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-[#4361EE] dark:text-[#A5B8FF]">{item.perioada}</td>
                       <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300">{item.facultate}</td>
                       <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 text-gray-800 dark:text-gray-200">{item.specializare}</td>
-                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 text-center font-semibold text-[#7209B7] dark:text-[#4CC9F0]">{item.durata}</td>
+                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 text-center font-semibold text-[#7209B7] dark:text-[#DDB8FF]">{item.durata}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -331,10 +323,10 @@ export default function ListeProfesoriPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
+            className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm p-8 md:p-12 border border-[#4CC9F0]/20 dark:border-gray-700 mb-12"
           >
             <div className="flex items-center gap-3 mb-8">
-              <Clock className="w-8 h-8 text-[#4361EE]" />
+              <Clock className="w-8 h-8 text-[#4361EE] dark:text-[#A5B8FF]" />
               <div>
                 <h2 className="text-2xl text-[#3A0CA3] dark:text-[#4CC9F0]">Personalul didactic încadrat la AISCI/ISEP/ASE domeniu de predare Statistica</h2>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">(1913-prezent) — 125 membri</p>
@@ -343,7 +335,7 @@ export default function ListeProfesoriPage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gradient-to-r from-[#7209B7] to-[#4361EE] text-white">
+                  <tr className="bg-[#7209B7] text-white">
                     <th className="border border-purple-300 dark:border-purple-700 px-4 py-3 text-left">Nume și prenume</th>
                     <th className="border border-purple-300 dark:border-purple-700 px-4 py-3 text-left">Disciplina / Catedra / Departamentul</th>
                     <th className="border border-purple-300 dark:border-purple-700 px-4 py-3 text-left">Data încadrării</th>
@@ -354,7 +346,7 @@ export default function ListeProfesoriPage() {
                     <tr key={item.nume} className={index % 2 === 0 ? 'bg-purple-50 dark:bg-gray-700' : 'bg-white dark:bg-gray-800'}>
                       <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 font-semibold text-gray-800 dark:text-gray-200">{item.nume}</td>
                       <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300">{item.disciplina}</td>
-                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 text-[#7209B7] dark:text-[#4CC9F0] font-semibold">{item.data}</td>
+                      <td className="border border-gray-200 dark:border-gray-600 px-4 py-3 text-[#7209B7] dark:text-[#DDB8FF] font-semibold">{item.data}</td>
                     </tr>
                   ))}
                 </tbody>

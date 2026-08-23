@@ -9,7 +9,7 @@ const curriculumCategories = [
   {
     name: 'Statistica',
     icon: BookOpen,
-    gradient: 'from-[#4361EE] to-[#4895EF]',
+    gradient: 'bg-[#4361EE]',
     subjects: [
       'Statistică',
       'Statistică inferențială',
@@ -30,7 +30,7 @@ const curriculumCategories = [
   {
     name: 'Matematica și Cibernetica',
     icon: Award,
-    gradient: 'from-[#7209B7] to-[#B5179E]',
+    gradient: 'bg-[#7209B7]',
     subjects: [
       'Algebră',
       'Analiză matematică',
@@ -45,7 +45,7 @@ const curriculumCategories = [
   {
     name: 'Informatica',
     icon: Briefcase,
-    gradient: 'from-[#4CC9F0] to-[#4895EF]',
+    gradient: 'bg-[#4CC9F0]',
     subjects: [
       'Bazele tehnologiei informației',
       'Bazele programării calculatoarelor',
@@ -62,7 +62,7 @@ const curriculumCategories = [
   {
     name: 'Economie',
     icon: GraduationCap,
-    gradient: 'from-[#F72585] to-[#B5179E]',
+    gradient: 'bg-[#F72585]',
     subjects: [
       'Economie',
       'Introducere în contabilitate',
@@ -121,7 +121,7 @@ export function ProgramSection() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl mb-4">
-            <span className="bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] bg-clip-text text-transparent">
+            <span className="text-[#3A0CA3] dark:text-[#4CC9F0]">
               Licență în Statistică Economică și Data Science
             </span>
           </h2>
@@ -142,14 +142,14 @@ export function ProgramSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className={`bg-gradient-to-br ${category.gradient === 'from-[#7209B7] to-[#B5179E]' ? 'from-[#7209B7]/5 to-[#B5179E]/5 border-[#7209B7]/20' : category.gradient === 'from-[#4361EE] to-[#4895EF]' ? 'from-[#4361EE]/5 to-[#4895EF]/5 border-[#4361EE]/20' : category.gradient === 'from-[#F72585] to-[#B5179E]' ? 'from-[#F72585]/5 to-[#B5179E]/5 border-[#F72585]/20' : 'from-[#4CC9F0]/5 to-[#4895EF]/5 border-[#4CC9F0]/20'} rounded-2xl p-8 border hover:shadow-xl transition-all`}
+                className={`${category.gradient === 'bg-[#7209B7]' ? 'bg-[#7209B7]/5 border-[#7209B7]/20' : category.gradient === 'bg-[#4361EE]' ? 'bg-[#4361EE]/5 border-[#4361EE]/20' : category.gradient === 'bg-[#F72585]' ? 'bg-[#F72585]/5 border-[#F72585]/20' : 'bg-[#4CC9F0]/5 border-[#4CC9F0]/20'} rounded-xl p-8 border transition-all`}
               >
                 <div className="flex items-start gap-4 mb-6">
-                  <div className={`p-3 bg-gradient-to-br ${category.gradient} rounded-lg`}>
+                  <div className={`p-3 ${category.gradient} rounded-lg`}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl mt-1 mb-2">{category.name}</h3>
+                    <h3 className="text-2xl mt-1 mb-2 text-gray-900 dark:text-white">{category.name}</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       {category.subjects.length} {category.subjects.length === 1 ? 'curs' : 'cursuri'}
                     </p>
@@ -161,14 +161,14 @@ export function ProgramSection() {
                   <div className="grid grid-cols-1 gap-2">
                     {(expandedCategories[category.name] ? category.subjects : category.subjects.slice(0, 3)).map((subject, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${category.gradient}`}></div>
+                        <div className={`w-1.5 h-1.5 rounded-full ${category.gradient}`}></div>
                         {subject}
                       </div>
                     ))}
                   </div>
                   {category.subjects.length > 3 && (
                     <button
-                      className={`text-xs mt-3 flex items-center gap-1 transition-colors ${category.gradient.includes('7209B7') ? 'text-[#7209B7] hover:text-[#B5179E]' : category.gradient.includes('4361EE') ? 'text-[#4361EE] hover:text-[#4895EF]' : category.gradient.includes('F72585') ? 'text-[#F72585] hover:text-[#B5179E]' : 'text-[#4CC9F0] hover:text-[#4895EF]'}`}
+                      className={`text-xs mt-3 flex items-center gap-1 transition-colors ${category.gradient.includes('7209B7') ? 'text-[#7209B7] dark:text-[#DDB8FF] hover:text-[#B5179E]' : category.gradient.includes('4361EE') ? 'text-[#4361EE] dark:text-[#A5B8FF] hover:text-[#4895EF]' : category.gradient.includes('F72585') ? 'text-[#B5179E] dark:text-[#F72585] hover:text-[#7209B7]' : 'text-[#4361EE] dark:text-[#4CC9F0] hover:text-[#3A0CA3]'}`}
                       onClick={() => toggleCategory(category.name)}
                     >
                       {expandedCategories[category.name] ? (
@@ -199,7 +199,7 @@ export function ProgramSection() {
         >
           <a
             href="#/discipline"
-            className="cursor-pointer inline-flex items-center gap-3 bg-gradient-to-r from-[#4361EE] to-[#4CC9F0] text-white px-8 py-4 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+            className="cursor-pointer inline-flex items-center gap-3 bg-[#4361EE] text-white px-8 py-4 rounded-full transition-all duration-300 group"
           >
             <GraduationCap className="w-5 h-5" />
             <span className="text-lg">Vezi toate disciplinele</span>
@@ -217,7 +217,7 @@ export function ProgramSection() {
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl mb-6">
+              <h3 className="text-3xl mb-6 text-gray-900 dark:text-white">
                 De ce să alegi Statistică și Econometrie?
               </h3>
               <div className="space-y-6">
@@ -230,7 +230,7 @@ export function ProgramSection() {
                     className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4"
                     style={{ borderColor: '#4361EE' }}
                   >
-                    <h4 className="text-xl mb-2">{advantage.title}</h4>
+                    <h4 className="text-xl mb-2 text-gray-900 dark:text-white">{advantage.title}</h4>
                     <p className="text-gray-600 dark:text-gray-300">{advantage.description}</p>
                   </motion.div>
                 ))}
@@ -242,7 +242,7 @@ export function ProgramSection() {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="relative"
             >
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <div className="rounded-xl overflow-hidden shadow-sm">
                 <img
                   src={EMOS}
                   alt="Studenți analizând date"
@@ -260,7 +260,7 @@ export function ProgramSection() {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="mb-12"
         >
-          <h3 className="text-3xl text-center mb-4">
+          <h3 className="text-3xl text-center mb-4 text-gray-900 dark:text-white">
             Ce specializare ți se potrivește?
           </h3>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
@@ -273,16 +273,16 @@ export function ProgramSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              className="bg-white dark:bg-gray-800 border-2 border-[#4361EE]/30 dark:border-[#4361EE]/50 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+              className="bg-white dark:bg-gray-800 border-2 border-[#4361EE]/30 dark:border-[#4361EE]/50 rounded-xl p-8 transition-all duration-300 group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#4361EE]/10 dark:bg-[#4361EE]/20 rounded-bl-full -mr-16 -mt-16"></div>
               
               <div className="relative">
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="p-4 bg-gradient-to-br from-[#4361EE] to-[#4895EF] rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform">
+                  <div className="p-4 bg-[#4361EE] rounded-xl shadow-sm mb-4 transition-transform">
                     <BookOpen className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-2xl bg-gradient-to-r from-[#4361EE] to-[#4895EF] bg-clip-text text-transparent">
+                  <h4 className="text-2xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                     Statistică și Econometrie
                   </h4>
                 </div>
@@ -317,16 +317,16 @@ export function ProgramSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 1.1 }}
-              className="bg-white dark:bg-gray-800 border-2 border-[#4CC9F0]/30 dark:border-[#4CC9F0]/50 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+              className="bg-white dark:bg-gray-800 border-2 border-[#4CC9F0]/30 dark:border-[#4CC9F0]/50 rounded-xl p-8 transition-all duration-300 group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#4CC9F0]/10 dark:bg-[#4CC9F0]/20 rounded-bl-full -mr-16 -mt-16"></div>
               
               <div className="relative">
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="p-4 bg-gradient-to-br from-[#4CC9F0] to-[#4895EF] rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform">
+                  <div className="p-4 bg-[#4CC9F0] rounded-xl shadow-sm mb-4 transition-transform">
                     <Briefcase className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-2xl bg-gradient-to-r from-[#4CC9F0] to-[#4895EF] bg-clip-text text-transparent">
+                  <h4 className="text-2xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                     Informatică
                   </h4>
                 </div>
@@ -361,16 +361,16 @@ export function ProgramSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="bg-white dark:bg-gray-800 border-2 border-[#7209B7]/30 dark:border-[#7209B7]/50 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+              className="bg-white dark:bg-gray-800 border-2 border-[#7209B7]/30 dark:border-[#7209B7]/50 rounded-xl p-8 transition-all duration-300 group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#7209B7]/10 dark:bg-[#7209B7]/20 rounded-bl-full -mr-16 -mt-16"></div>
               
               <div className="relative">
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="p-4 bg-gradient-to-br from-[#7209B7] to-[#B5179E] rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform">
+                  <div className="p-4 bg-[#7209B7] rounded-xl shadow-sm mb-4 transition-transform">
                     <Award className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-2xl bg-gradient-to-r from-[#7209B7] to-[#B5179E] bg-clip-text text-transparent">
+                  <h4 className="text-2xl text-[#3A0CA3] dark:text-[#4CC9F0]">
                     Cibernetica
                   </h4>
                 </div>
