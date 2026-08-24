@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
+# Manual only. Deployment on push is handled by static2.yml — two workflows
+# publishing to Pages on the same event race each other, and whichever finishes
+# last wins.
 on:
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
